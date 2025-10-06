@@ -1,7 +1,10 @@
 // Contas padrão
 let users = [
-  { email: "admin@gmail.com", password: "1234", role: "admin" },
   { email: "user@gmail.com", password: "1234", role: "user" }
+];
+
+let user_adm = [
+{ email: "admin@gmail.com", password: "1234", role: "admin" }
 ];
 
 // Registrar nova conta
@@ -22,6 +25,7 @@ function register() {
 
   users.push({ email, password, role: "user" });
   alert("Conta criada com sucesso!");
+  login();
 }
 
 function login() {

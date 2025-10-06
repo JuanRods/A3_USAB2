@@ -78,12 +78,32 @@ main {
     }
 
     header {
-      background-color: #000;
-      padding: 20px;
-      color: #fff;
-      font-size: 24px;
-      font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #111;
     }
+      
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+header .back-btn {
+  padding: 12px 24px;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header .back-btn:hover {
+  background-color: #e00;
+  border-color: #e00;
+}
 
     main {
       flex: 1;

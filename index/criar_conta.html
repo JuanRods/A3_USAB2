@@ -8,30 +8,27 @@
 </head>
 <body>
 
-  <header>TOK-STORE</header>
+  <header>
+    <div class="logo">TOK-STORE</div>
+    <div>
+        <button class="back-btn" onclick= "logout()">Voltar</button>
+    </div>
+  </header>
 
   <main>
     <div class="login-container">
       <img src="https://i.redd.it/5ldnlzqdys951.png" alt="Avatar">
-      <h2>Entrar no Tok-Store</h2>
-
-      <button class="google-btn">
-        <img src="https://www.citypng.com/public/uploads/preview/google-logo-icon-gsuite-hd-701751694791470gzbayltphh.png" alt="Google" width="20">
-        Continuar com o Google
-      </button>
-
-      <div class="separator">OU</div>
+      <h2>Criar Conta</h2>
 
       <input type="email" id="email" placeholder="E-MAIL">
       <input type="password" id="password" placeholder="SENHA">
 
-      <button class="login-btn" onclick="login()">Entrar</button>
-    
 
+     <div> <button class="login-btn" onclick="register()">Criar conta</button>
+</div>
       <div class="links">
         <a href="#">Redefinir senha</a> |
-        <a href="/index/criar_conta.html"> Criar Conta </a> |
-        <a href="#">Ajuda</a> 
+        <a href="#">Ajuda</a>
       </div>
     </div>
   </main>
@@ -39,7 +36,7 @@
   
   <footer>
     <div class="column">
-      <strong>Namedly</strong>
+      <strong>Tok-Store</strong>
       <p>Descriptive line about what your company does.</p>
       <div class="social-icons">
         <a href="#">Instagram</a>
