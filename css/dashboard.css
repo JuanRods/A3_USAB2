@@ -50,6 +50,7 @@ nav {
 }
 
 nav a {
+  
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -60,21 +61,31 @@ nav a:hover {
 }
 
 .banner {
-  height: 300px;
-  background-color: #222;
+  height: 400px; /* define altura visível */
+  width: 80%;
+  margin-left: 10%;
+  background-image: url("/img/meddqk01amia1.gif");
+  background-size: cover; /* cobre toda a área */
+  background-position: center; /* centraliza a imagem */
+  background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+
 }
 
-.game-carousel {
+
+.game-vitrine {
   display: flex;
   overflow-x: auto;
   gap: 20px;
   padding: 0 20px;
+  margin: auto;
 }
 
 .game-card {

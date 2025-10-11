@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tok-Store Login</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">TOK-STORE</div>
+    <div>
+        <button class="back-btn" onclick= "logout()">Voltar</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <img src="https://i.redd.it/5ldnlzqdys951.png" alt="Avatar">
+      <h2>Criar Conta</h2>
+
+      <input type="email" id="email" placeholder="E-MAIL">
+      <input type="password" id="password" placeholder="SENHA">
+
+
+     <div> <button class="login-btn" onclick="register()">Criar conta</button>
+</div>
+      <div class="links">
+        <a href="#">Redefinir senha</a> |
+        <a href="#">Ajuda</a>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer>
+    <div class="column">
+      <strong>Tok-Store</strong>
+      <p>Descriptive line about what your company does.</p>
+      <div class="social-icons">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">X</a>
+      </div>
+    </div>
+
+    <div class="column">
+      <h4>Features</h4>
+      <a href="#">Core features</a>
+      <a href="#">Pro experience</a>
+      <a href="#">Integrations</a>
+    </div>
+
+    <div class="column">
+      <h4>Learn more</h4>
+      <a href="#">Blog</a>
+      <a href="#">Case studies</a>
+      <a href="#">Customer stories</a>
+    </div>
+
+    <div class="column">
+      <h4>Support</h4>
+      <a href="#">Contact</a>
+      <a href="#">Support</a>
+      <a href="#">Legal</a>
+    </div>
+  </footer>
+
+  <script src="../js/auth.js"></script>
+</body>
+</html>

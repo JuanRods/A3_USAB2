@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/css/layout.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <title>Carrinho - TOK-STORE</title>
+
+</head>
+<body>
+
+ <div class="side-bar">
+        <div class="side-bar-header">
+            <div>
+                <div class="side-bar-icon"></div>
+                <div class="side-bar-icon"></div>
+                <div class="side-bar-icon"></div>
+            </div>
+            <div id="menu"><span>Menu</span></div>
+        </div>
+        <ul>
+            <div class="icons">
+                <li><a href="dashboard.html" class="icon-house"><i class="fa-solid fa-house"></i><span>Início</span></a>
+                </li>
+                <li><a href="store.html" class="icon-store"><i class="fa-solid fa-store"></i><span>Loja</span></a> </li>
+                <li><a href="favorites.html" class="icon-heart"><i
+                            class="fa-solid fa-heart"></i><span>Favoritos</span></a></li>
+                <li><a href="carrinho.html" class="icon-cart"><i
+                            class="fa-solid fa-cart-shopping"></i><span>Carrinho</span></a></li>
+                <li><a href="perfil.html" class="icon-user"><i
+                            class="fa-solid fa-circle-user"></i><span>Perfil</span></a></li>
+                <li><a href="config.html" class="icon-gear"><i
+                            class="fa-solid fa-gear"></i><span>Configuração</span></a></li>
+                <li onclick="logout()"><a class="icon-back"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>Sair</span></a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    
+  <div class="container">
+    <header class="header">
+      <div class="title">Seu Carrinho</div>
+      <div class="search-support">
+        <input type="text" placeholder="Pesquise seu jogo aqui" />
+        <button>Suporte</button>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a href="explorar.html">Explorar</a>
+      <a href="recomendacoes.html">Recomendações</a>
+      <a href="categorias.html">Categorias</a>
+      <a href="carrinho.html">Carrinho</a>
+    </nav>
+
+    <section class="banner">
+      Revise seus jogos antes de comprar
+    </section>
+
+    <main class="content">
+      <div class="cart-item">
+        <span>Cyberpunk 2077</span>
+        <span>R$ 99,90</span>
+      </div>
+      <div class="cart-item">
+        <span>Red Dead Redemption II</span>
+        <span>R$ 199,90</span>
+      </div>
+      <button class="checkout">Finalizar Compra</button>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>Namedly</strong>
+        <p>Descriptive line about what your company does.</p>
+        <div class="links">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div>
+        <strong>Support</strong>
+        <a href="#">Contact</a>
+        <a href="#">Support</a>
+        <a href="#">Legal</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

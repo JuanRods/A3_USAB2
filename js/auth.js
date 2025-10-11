@@ -45,7 +45,7 @@ function login() {
 // Logout
 function logout() {
   localStorage.removeItem("loggedUser");
-  window.location.href = "/index/login.html";
+  window.location.href = "index.html";
 }
 
 // Proteção no dashboard

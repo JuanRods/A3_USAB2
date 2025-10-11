@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tok-Store</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body">
+    <div class="side-bar">
+        <div class="side-bar-header">
+            <div>
+                <div class="side-bar-icon"></div>
+                <div class="side-bar-icon"></div>
+                <div class="side-bar-icon"></div>
+            </div>
+            <div id="menu"><span>Menu</span></div>
+        </div>
+        <ul>
+            <div class="icons">
+                <li><a href="dashboard.html" class="icon-house"><i class="fa-solid fa-house"></i><span>Início</span></a>
+                </li>
+                <li><a href="store.html" class="icon-store"><i class="fa-solid fa-store"></i><span>Loja</span></a> </li>
+                <li><a href="favorites.html" class="icon-heart"><i
+                            class="fa-solid fa-heart"></i><span>Favoritos</span></a></li>
+                <li><a href="carrinho.html" class="icon-cart"><i
+                            class="fa-solid fa-cart-shopping"></i><span>Carrinho</span></a></li>
+                <li><a href="perfil.html" class="icon-user"><i
+                            class="fa-solid fa-circle-user"></i><span>Perfil</span></a></li>
+                <li><a href="config.html" class="icon-gear"><i
+                            class="fa-solid fa-gear"></i><span>Configuração</span></a></li>
+                <li onclick="logout()"><a class="icon-back"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>Sair</span></a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    
+    <div class="container">
+
+        <header>
+            <div class="logo">TOK-STORE</div>
+            <div>
+                <input type="text" placeholder="Pesquise seu jogo aqui">
+                <button>Suporte</button>
+            </div>
+        </header>
+
+        <nav>
+            <a href="explorar.html">Explorar</a>
+            <a href="recomendacoes.html">Recomendações</a>
+            <a href="categorias.html">Categorias</a>
+            <a href="carrinho.html">Carrinho</a>
+        </nav>
+
+
+
+        <div class="banner">
+        </div>
+        <div class="game-vitrine">
+            <div class="game-card">Red Dead Redemption II </div>
+            <div class="game-card">Grand Theft Auto V</div>
+            <div class="game-card">The Witcher III: Wild Hunt</div>
+            <div class="game-card">Cyberpunk 2077</div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <strong>Namedly</strong><br>
+            Descriptive line about what your company does.<br>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <div>
+            <strong>Support</strong><br>
+            <a href="#">Contact</a><br>
+            <a href="#">Support</a><br>
+            <a href="#">Legal</a>
+        </div>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    </body>
+
+</html>
