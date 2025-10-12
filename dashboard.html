@@ -7,6 +7,8 @@
     <title>Tok-Store</title>
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/manipulate.css">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body">
@@ -47,26 +49,27 @@
                 <button>Suporte</button>
             </div>
         </header>
+<main class="content">
+      <h2>Gêneros</h2>
+      <ul class="cards-category">
+  <li class="cardc">RPG</li>
+  <li class="cardc">Aventura</li>
+  <li class="cardc">Ação</li>
+  <li class="cardc">Corrida</li>
+  <li class="cardc">Terror</li>
+  <li class="cardc">Simulação</li>
+  <li class="cardc">Esporte</li>
+  <li class="cardc">Estratégia</li>
+  <li class="cardc">Sandbox</li>
+  <li class="cardc">Plataforma</li>
+  <li class="cardc">Puzzle</li>
+  <li class="cardc">FPS</li>
+  <li class="cardc">Battle Royale</li>
+  <li class="cardc">MMORPG</li>
+</ul>
 
-        <nav>
-            <a href="explorar.html">Explorar</a>
-            <a href="recomendacoes.html">Recomendações</a>
-            <a href="categorias.html">Categorias</a>
-            <a href="carrinho.html">Carrinho</a>
-        </nav>
-
-
-
-        <div class="banner">
-        </div>
-        <div class="game-vitrine">
-            <div class="game-card">Red Dead Redemption II </div>
-            <div class="game-card">Grand Theft Auto V</div>
-            <div class="game-card">The Witcher III: Wild Hunt</div>
-            <div class="game-card">Cyberpunk 2077</div>
-        </div>
-    </div>
-
+<section class="cards-container" id="cards-container"></section>
+    </main>
     <footer>
         <div>
             <strong>Namedly</strong><br>
@@ -83,6 +86,8 @@
     </footer>
 
     <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/categoria.js"></script>
     </body>
 
 </html>

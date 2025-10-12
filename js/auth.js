@@ -1,13 +1,10 @@
-// Contas padrão
+// Contas padrão (unificadas)
 let users = [
-  { email: "user@gmail.com", password: "1234", role: "user" }
+  { email: "user@gmail.com", password: "1234", role: "user" },
+  { email: "admin@gmail.com", password: "1234", role: "admin" }
 ];
 
-let user_adm = [
-{ email: "admin@gmail.com", password: "1234", role: "admin" }
-];
-
-// Registrar nova conta
+// Registrar nova conta (só para users comuns)
 function register() {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -28,6 +25,7 @@ function register() {
   login();
 }
 
+// Login com rota para admin ou user
 function login() {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -36,7 +34,13 @@ function login() {
 
   if (user) {
     localStorage.setItem("loggedUser", JSON.stringify(user));
-    window.location.href = "dashboard.html";
+    
+    // Roteamento por role
+    if (user.role === "admin") {
+      window.location.href = "admin.html";
+    } else {
+      window.location.href = "dashboard.html";
+    }
   } else {
     alert("Credenciais inválidas!");
   }
@@ -48,12 +52,20 @@ function logout() {
   window.location.href = "index.html";
 }
 
-// Proteção no dashboard
+// Proteção na dashboard e admin
+const logged = JSON.parse(localStorage.getItem("loggedUser"));
 if (window.location.pathname.includes("dashboard.html")) {
-  const logged = JSON.parse(localStorage.getItem("loggedUser"));
-  if (!logged) {
+  if (!logged || logged.role !== "user") {
     window.location.href = "index.html";
   } else {
     console.log("Bem-vindo:", logged.email, "Role:", logged.role);
+  }
+}
+
+if (window.location.pathname.includes("admin.html")) {
+  if (!logged || logged.role !== "admin") {
+    window.location.href = "index.html";
+  } else {
+    console.log("Bem-vindo Admin:", logged.email);
   }
 }

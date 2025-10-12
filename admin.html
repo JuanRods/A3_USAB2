@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Administração - TOK-STORE</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="side-bar">
+    <div class="side-bar-header">
+      <div>
+        <div class="side-bar-icon"></div>
+        <div class="side-bar-icon"></div>
+        <div class="side-bar-icon"></div>
+      </div>
+      <div id="menu"><span>Menu</span></div>
+    </div>
+    <ul>
+      <div class="icons">
+        <li><a href="dashboard.html" class="icon-house"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+        <li><a href="store.html" class="icon-store"><i class="fa-solid fa-store"></i><span>Loja</span></a></li>
+        <li><a href="favorites.html" class="icon-heart"><i class="fa-solid fa-heart"></i><span>Favoritos</span></a></li>
+        <li><a href="carrinho.html" class="icon-cart"><i class="fa-solid fa-cart-shopping"></i><span>Carrinho</span></a></li>
+        <li><a href="perfil.html" class="icon-user"><i class="fa-solid fa-circle-user"></i><span>Perfil</span></a></li>
+        <li><a href="admin.html" class="icon-gear active"><i class="fa-solid fa-lock"></i><span>Admin</span></a></li>
+        <li onclick="logout()"><a class="icon-back"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>Sair</span></a></li>
+      </div>
+    </ul>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <div class="title">Painel Administrativo</div>
+      <div class="search-support">
+        <input type="text" placeholder="Pesquisar usuários ou jogos..." />
+        <button>Suporte</button>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="store.html">Loja</a>
+      <a href="admin.html" class="active">Admin</a>
+    </nav>
+
+    <main class="content">
+      <section>
+        <h2>Gerenciar Usuários</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Usuário</th>
+              <th>Email</th>
+              <th>Data de Cadastro</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="usuarios-table">
+            <tr>
+              <td>joaosilva</td>
+              <td>joao.silva@email.com</td>
+              <td>10/06/2023</td>
+              <td><button class="edit-btn" onclick="editarUsuario('joaosilva')">Editar</button></td>
+            </tr>
+            <tr>
+              <td>mariazinha</td>
+              <td>maria@email.com</td>
+              <td>05/01/2024</td>
+              <td><button class="edit-btn" onclick="editarUsuario('mariazinha')">Editar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Gerenciar Jogos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Preço</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="jogos-table">
+            <tr>
+              <td>The Witcher 3</td>
+              <td>RPG</td>
+              <td>R$59,99</td>
+              <td><button class="edit-btn" onclick="editarJogo('The Witcher 3')">Editar</button></td>
+            </tr>
+            <tr>
+              <td>Cyberpunk 2077</td>
+              <td>RPG</td>
+              <td>R$59,99</td>
+              <td><button class="edit-btn" onclick="editarJogo('Cyberpunk 2077')">Editar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>Namedly</strong>
+        <p>Descriptive line about what your company does.</p>
+        <div class="links">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div>
+        <strong>Support</strong>
+        <a href="#">Contact</a>
+        <a href="#">Support</a>
+        <a href="#">Legal</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/js/auth.js"></script>
+  <script>
+    function editarUsuario(username) {
+      alert(`Editar usuário: ${username}`);
+    }
+    function editarJogo(nome) {
+      alert(`Editar jogo: ${nome}`);
+    }
+  </script>
+</body>
+</html>

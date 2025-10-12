@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="/css/layout.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <title>Carrinho - TOK-STORE</title>
+  <title>Favoritos - TOK-STORE</title>
 </head>
 <body>
 
@@ -33,27 +33,17 @@
 
   <div class="container">
     <header class="header">
-      <div class="title">Seu Carrinho</div>
+      <div class="title">Seus Favoritos</div>
       <div class="search-support">
         <input type="text" placeholder="Pesquise seu jogo aqui" />
         <button>Suporte</button>
       </div>
     </header>
 
-    <nav class="nav">
-      <a href="explorar.html">Explorar</a>
-      <a href="recomendacoes.html">Recomendações</a>
-      <a href="categorias.html">Categorias</a>
-      <a href="carrinho.html">Carrinho</a>
-    </nav>
-
-    <section class="banner">
-      Revise seus jogos antes de comprar
-    </section>
-
     <main class="content">
-      <div id="cart-items"></div>
-      <button class="checkout">Finalizar Compra</button>
+      <section class="cards" id="favorites-list">
+        <!-- Cards de favoritos serão renderizados aqui -->
+      </section>
     </main>
 
     <footer class="footer">
@@ -76,6 +66,6 @@
 
   <!-- Scripts -->
   <script src="/js/auth.js"></script>
-  <script src="/js/cart.js"></script>
+  <script src="/js/favorites.js"></script>
 </body>
 </html>

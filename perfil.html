@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfil - TOK-STORE</title>
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/login.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="side-bar">
+    <!-- Mesma sidebar do seu projeto -->
+    <div class="side-bar-header">
+      <div>
+        <div class="side-bar-icon"></div>
+        <div class="side-bar-icon"></div>
+        <div class="side-bar-icon"></div>
+      </div>
+      <div id="menu"><span>Menu</span></div>
+    </div>
+    <ul>
+      <div class="icons">
+        <li><a href="dashboard.html" class="icon-house"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+        <li><a href="store.html" class="icon-store"><i class="fa-solid fa-store"></i><span>Loja</span></a></li>
+        <li><a href="favorites.html" class="icon-heart"><i class="fa-solid fa-heart"></i><span>Favoritos</span></a></li>
+        <li><a href="carrinho.html" class="icon-cart"><i class="fa-solid fa-cart-shopping"></i><span>Carrinho</span></a></li>
+        <li><a href="perfil.html" class="icon-user active"><i class="fa-solid fa-circle-user"></i><span>Perfil</span></a></li>
+        <li><a href="config.html" class="icon-gear"><i class="fa-solid fa-gear"></i><span>Configuração</span></a></li>
+        <li onclick="logout()"><a class="icon-back"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>Sair</span></a></li>
+      </div>
+    </ul>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <div class="title">Meu Perfil</div>
+      <div class="search-support">
+        <input type="text" placeholder="Pesquisar jogos..." />
+        <button>Suporte</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="profile-info">
+        <h2>Informações do Usuário</h2>
+        <div class="profile-details">
+          <p><strong>Nome:</strong> João Silva</p>
+          <p><strong>Email:</strong> joao.silva@email.com</p>
+          <p><strong>Data de Cadastro:</strong> 10/06/2023</p>
+          <p><strong>Jogos Comprados:</strong> 15</p>
+        </div>
+      </section>
+
+      <section class="profile-settings">
+        <h2>Configurações</h2>
+        <form id="profile-settings-form">
+          <label for="username">Nome de Usuário:</label>
+          <input type="text" id="username" name="username" value="joaosilva" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value="joao.silva@email.com" />
+
+          <label for="password">Nova Senha:</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" />
+
+          <button type="submit">Salvar Alterações</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>Namedly</strong>
+        <p>Descriptive line about what your company does.</p>
+        <div class="links">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div>
+        <strong>Support</strong>
+        <a href="#">Contact</a>
+        <a href="#">Support</a>
+        <a href="#">Legal</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/js/auth.js"></script>
+  <script>
+    // Exemplo básico para manipular form de perfil
+    document.getElementById('profile-settings-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Alterações salvas!');
+      // Aqui você pode integrar chamadas para backend
+    });
+  </script>
+</body>
+</html>
