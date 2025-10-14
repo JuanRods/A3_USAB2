@@ -6,17 +6,26 @@ body {
 }
 
 header {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #111;
+  background-color: #11111100;
+  width: 100%;
+  z-index: 1;
+  transition: background-color 0.3 ease;
+}
+
+header.scrolled{
+  background-color: #0a0a0a;
 }
 
 header .logo {
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 2px;
+  margin-left: 3%;
 }
 
 header input[type="text"] {
@@ -27,8 +36,9 @@ header input[type="text"] {
 }
 
 header button {
-  padding: 6px 12px;
-  margin-left: 10px;
+  margin-top: 1.5%;
+  padding: 6px 18px;
+  margin-left: 1%px;
   background-color: #111;
   color: #fff;
   border: 1px solid #fff;
@@ -37,47 +47,42 @@ header button {
 }
 
 header button:hover {
+
   background-color: #e00;
+
   border-color: #e00;
+
 }
 
 nav {
   display: flex;
+
   justify-content: center;
+
   gap: 20px;
+
   background-color: #1a1a1a;
+
   padding: 8px 0;
+
 }
 
 nav a {
   
   color: #fff;
+
   text-decoration: none;
+
   font-weight: bold;
+
 }
 
 nav a:hover {
+
   color: #e00;
-}
-
-.banner {
-  height: 400px; /* define altura visível */
-  width: 80%;
-  margin-left: 10%;
-  background-image: url("/img/meddqk01amia1.gif");
-  background-size: cover; /* cobre toda a área */
-  background-position: center; /* centraliza a imagem */
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-  position: relative;
-  z-index: 1;
 
 }
+
 
 
 .game-vitrine {

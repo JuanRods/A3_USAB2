@@ -69,3 +69,12 @@ if (window.location.pathname.includes("admin.html")) {
     console.log("Bem-vindo Admin:", logged.email);
   }
 }
+
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header')
+  if (window.scrollY > 0) {
+    header.classList.add("scrolled")
+  } else{
+    header.classList.remove("scrolled")
+  }
+});
