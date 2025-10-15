@@ -3,22 +3,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
   if (favoritos.length === 0) {
-    lista.innerHTML = "<p>Você ainda não adicionou jogos aos favoritos.</p>";
+    const mensagem = document.createElement("p");
+    mensagem.textContent = "Você ainda não adicionou jogos aos favoritos.";
+    lista.appendChild(mensagem);
     return;
   }
 
   favoritos.forEach((jogo, index) => {
     const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <div>
-        <h3>${jogo.nome}</h3>
-        <p>R$ ${jogo.preco.toFixed(2)}</p>
-        <button class="remove-fav" data-index="${index}">
-          <i class="fa-solid fa-trash"></i> Remover
-        </button>
-      </div>
-    `;
+    card.className = "card_buy";
+
+    const container = document.createElement("div");
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = jogo.nome;
+
+    const preco = document.createElement("p");
+    preco.textContent = `R$ ${jogo.preco.toFixed(2)}`;
+
+    const botao = document.createElement("button");
+    botao.className = "remove-fav";
+    botao.dataset.index = index;
+
+    const icone = document.createElement("i");
+    icone.className = "fa-solid fa-trash";
+
+    botao.appendChild(icone);
+    botao.append(" Remover");
+
+    container.appendChild(titulo);
+    container.appendChild(preco);
+    container.appendChild(botao);
+
+    card.appendChild(container);
     lista.appendChild(card);
   });
 

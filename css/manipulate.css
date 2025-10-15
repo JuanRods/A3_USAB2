@@ -1,69 +1,88 @@
 #card_buys-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
-  margin-left: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    margin-left: 3%;
+
 }
 
 .card_buy {
-  background-color: #1a07a992;
-  width: 12rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative; 
-  transition: transform 0.3s, background-color 0.3s;
+    background-color: #1a07a992;
+    width: 12rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .card_buy:hover {
-  background-color: rgba(255, 255, 0, 0.616);
-  transform: scale(1.05);
+    background-color: rgba(255, 255, 0, 0.616);
+    transform: scale(1.05);
 }
 
 .card_buy button {
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  background: linear-gradient(180deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 20%, rgb(3, 147, 175) 40%, rgba(1, 159, 190, 0.811) 60%,rgba(9, 9, 121, 1) 80%,rgba(2, 0, 36, 1) 100%);
-  background-size: 100% 500%; /* gradiente 5x mais alto */
-  background-position: 0% 0%;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  transition: background-position 0.5s ease;
-  cursor: pointer;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 20%, rgb(3, 147, 175) 40%, rgba(1, 159, 190, 0.811) 60%, rgba(9, 9, 121, 1) 80%, rgba(2, 0, 36, 1) 100%);
+    background-size: 100% 500%;
+    /* gradiente 5x mais alto */
+    background-position: 0% 0%;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    transition: background-position 0.5s ease;
+    cursor: pointer;
 }
 
 .card_buy button:hover {
-  animation: color-move 6s linear infinite;
+    animation: color-move 6s linear infinite;
 }
 
 @keyframes color-move {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 0% 100%;
+    }
 }
 
 
-
-/* Ícone de coração (favoritar) */
 .card_buy .fav-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: rgb(255, 255, 255);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.2s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .card_buy .fav-icon:hover {
     color: red;
-  transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.card_buy .fav-icon.active {
+    color: red;
+
+}
+
+#toggle-genres {
+    margin-left: 89%;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#toggle-genres:hover {
+    background-color: #0056b3;
 }

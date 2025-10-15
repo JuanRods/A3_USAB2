@@ -13,40 +13,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-    
-<div class="container">
-        <div class="side-bar">
-            <ul>
-                <div class="icons">
-                    <li><a href="dashboard.html" class="icon-house"><i class="fa-solid fa-house"></i><span>Início</span></a>
-                    </li>
-                    <li><a href="store.html" class="icon-store"><i class="fa-solid fa-store"></i><span>Loja</span></a> </li>
-                    <li><a href="favorites.html" class="icon-heart"><i
-                                class="fa-solid fa-heart"></i><span>Favoritos</span></a></li>
-                    <li><a href="carrinho.html" class="icon-cart"><i
-                                class="fa-solid fa-cart-shopping"></i><span>Carrinho</span></a></li>
-                    <li><a href="perfil.html" class="icon-user"><i
-                                class="fa-solid fa-circle-user"></i><span>Perfil</span></a></li>
-                    <li><a href="config.html" class="icon-gear"><i
-                                class="fa-solid fa-gear"></i><span>Configuração</span></a></li>
-                    <li onclick="logout()"><a class="icon-back"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>Sair</span></a>
-                    </li>
-                </div>
-            </ul>
-        </div>
-        
-
+<body>    
         <header>
             <div class="logo">TOK-STORE</div>
-            <div>
-                <input type="text" id = "busca" placeholder="Pesquise seu jogo aqui">
-                <button>Suporte</button>
+            <section class = "nav-in-the-box">
+                 <nav>
+  <button onclick="location.href='dashboard.html'">Início</button>
+  <button onclick="location.href='favorites.html'">Favoritos</button>
+  <button onclick="location.href='carrinho.html'">Carrinho</button>
+</nav>
+
+            </section>
+            <div class ="search-container">
+                <input type="text" id = "busca" placeholder="Pesquise seu jogo aqui"> <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </header>
-<main class="content">
-      <h2>Gêneros</h2>
-      <ul class="cards-category">
+        <main class="content">
+        
+        </main>
+        <section class = "bind">
+
+        </section>
+<main class="store">
+    <a id="toggle-genres"><i class="fa-solid fa-filter"></i></a>
+    <div id="genre-container" style="display: none;"></div>
+    <ul class="cards-category" id="category-list" style="display: none;">
   <li class="cardc">Todos</li>
   <li class="cardc">RPG</li>
   <li class="cardc">Aventura</li>
