@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciar Empresas - Game Store</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+  <h2><span class="logo">🎮</span> Game Store</h2>
+  <p class="subtitle">Admin Dashboard</p>
+
+  <nav class="menu">
+    <a href="admin.html" class="active"><i class="icon">📊</i> Dashboard</a>
+    <a href="empresas.html"><i class="icon">🏢</i> Empresas</a>
+    <a href="categorias.html"><i class="icon">🏷️</i> Categorias</a>
+    <a href="jogos.html"><i class="icon">🎮</i> Jogos</a>
+    <a href="carrinhoadmin.html"><i class="icon">🛒</i> Carrinho</a>
+    <a href="compras.html"><i class="icon">💳</i> Compras</a>
+    <a href="avaliacoes.html"><i class="icon">💬</i> Avaliações</a>
+    <a href="relatorios.html"><i class="icon">📈</i> Relatórios</a>
+  </nav>
+</aside>
+    <main class="content">
+      <header class="header"><h1>Gerenciar Empresas</h1></header>
+
+      <section class="form-section">
+        <form id="form-empresa">
+          <input type="text" placeholder="Nome da Empresa" required>
+          <input type="text" placeholder="CNPJ" required>
+          <button type="submit">Salvar</button>
+        </form>
+      </section>
+
+      <section class="table-section">
+        <h2>Empresas Cadastradas</h2>
+        <table>
+          <thead><tr><th>Nome</th><th>CNPJ</th><th>Ações</th></tr></thead>
+          <tbody>
+            <tr><td>CD Projekt Red</td><td>12.345.678/0001-90</td><td><button>Editar</button> <button>Excluir</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
