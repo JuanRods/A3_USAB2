@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tok-Store</title>
+
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link rel="stylesheet" href="/css/categorias.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <script defer src="/js/main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2><span class="logo"><i class="fa-solid fa-gamepad"></i></span>Tok-Store</h2>
+      <p class="subtitle">Admin Dashboard</p>
+
+      <nav class="menu">
+        <a href="admin.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="empresas.html"><i class="fa-solid fa-building"></i> Empresas</a>
+        <a href="categorias.html" class="active"><i class="fa-solid fa-tags"></i> Categorias</a>
+        <a href="jogos.html"><i class="fa-solid fa-gamepad"></i> Jogos</a>
+        <a href="carrinhoadmin.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho</a>
+        <a href="compras.html"><i class="fa-solid fa-credit-card"></i> Compras</a>
+        <a href="avaliacoes.html"><i class="fa-solid fa-comments"></i> Avaliações</a>
+        <a href="relatorios.html"><i class="fa-solid fa-chart-column"></i> Relatórios</a>
+      </nav>
+
+      <div class="menu logout">
+        <a href="/login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="content">
+      <header class="header"><h1>Gerenciar Categorias</h1></header>
+
+      <!-- Formulário -->
+      <section class="form-section">
+        <form id="form-categoria">
+          <input type="text" placeholder="Nome da Categoria" required />
+          <button type="submit" class="btn-add">Adicionar</button>
+        </form>
+      </section>
+
+      <!-- Tabela -->
+      <section class="table-section">
+        <h2>Categorias Existentes</h2>
+        <table class="categorias-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><i class="fa-solid fa-dragon icon-rpg"></i> RPG</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-gun icon-acao"></i> Ação</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-hat-wizard icon-aventura"></i> Aventura</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-puzzle-piece icon-puzzle"></i> Puzzle</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-tractor icon-simulacao"></i> Simulação</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-cubes icon-sandbox"></i> Sandbox</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-skull icon-horror"></i> Terror</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-gun icon-tiro"></i> Tiro</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-vr-cardboard icon-vr"></i> VR</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td><i class="fa-solid fa-people-group icon-social"></i> Social</td><td><button class="btn-editar">Editar</button> <button class="btn-excluir">Excluir</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

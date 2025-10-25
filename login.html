@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tok-Store — Acesso</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">TOK-STORE</div>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <img src="/img/Tok-Store-icon.jpg" alt="Avatar">
+
+      <!-- LOGIN -->
+      <div class="form active" id="login-form">
+        <h2>Entrar</h2>
+        <input type="email" id="login-email" placeholder="E-MAIL" />
+        <input type="password" id="login-password" placeholder="SENHA" />
+        <button class="login-btn" onclick="login()">Entrar</button>
+
+        <div class="links">
+          <a href="#" onclick="showForm('forgot-form')">Esqueci a senha</a> |
+          <a href="#" onclick="showForm('register-form')">Criar conta</a>
+        </div>
+      </div>
+
+      <!-- REGISTRO -->
+      <div class="form" id="register-form">
+        <h2>Criar Conta</h2>
+        <input type="email" id="register-email" placeholder="E-MAIL" />
+        <input type="password" id="register-password" placeholder="SENHA" />
+        <button class="login-btn" onclick="register()">Registrar</button>
+
+        <div class="links">
+          <a href="#" onclick="showForm('login-form')">Voltar ao login</a>
+        </div>
+      </div>
+
+      <!-- ESQUECI SENHA -->
+      <div class="form" id="forgot-form">
+        <h2>Redefinir Senha</h2>
+        <input type="email" id="forgot-email" placeholder="E-MAIL" />
+        <button class="login-btn" onclick="forgotPassword()">Enviar redefinição</button>
+
+        <div class="links">
+          <a href="#" onclick="showForm('login-form')">Voltar ao login</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="column">
+      <strong>Tok-Store</strong>
+      <p>Explore, compre e jogue — o futuro dos games digitais.</p>
+      <div class="social-icons">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">X</a>
+      </div>
+    </div>
+
+    <div class="column">
+      <h4>Explorar</h4>
+      <a href="#">Lançamentos</a>
+      <a href="#">Ranking</a>
+      <a href="#">Categorias</a>
+    </div>
+
+    <div class="column">
+      <h4>Suporte</h4>
+      <a href="#">Contato</a>
+      <a href="#">Ajuda</a>
+      <a href="#">Política</a>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

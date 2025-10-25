@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>Tok-Store</title>
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/descrição.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="/css/manipulate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">TOK-STORE</div>
+
+    <div class="search-container">
+      <input type="text" id="busca" placeholder="Pesquise seu jogo aqui">
+      <button class="search-btn" id="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+
+    <section class="nav-in-the-box">
+      <nav>
+        <button onclick="location.href='wishlist.html'">Lista de Desejos</button>
+        <button onclick="location.href='carrinho.html'"><i class="fa-solid fa-cart-shopping"></i> Carrinho</button>
+        <button onclick="location.href='perfil.html'" id="person"><i class="fa-solid fa-user"></i></button>
+      </nav>
+    </section>
+  </header>
+
+  <!-- Sidebar Vertical -->
+  <aside class="sidebar">
+  <div class="sidebar-top">
+    <img src="/img/chaos-icon.jpg" alt="Logo" class="logo-icon" />
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+      <li><a href="explorar.html"><i class="fa-solid fa-compass"></i><span>Explorar</span></a></li>
+      <li><a href="ranking.html"><i class="fa-solid fa-ranking-star"></i><span>Ranking dos Melhores</span></a></li>
+      <li><a href="perfil.html"><i class="fa-solid fa-gear"></i><span>Configurações</span></a></li>
+      <li><a href="/login.html"><i class="fa-solid fa-right-from-bracket"></i><span>Sair</span></a></li>
+    </ul>
+  </nav>
+</aside>
+
+  <main class="game-container">
+    <section class="main-info">
+      <div class="media-preview">
+        <img id="game-banner" src="" alt="Imagem do jogo"/>
+        <div class="thumbnail-row" id="thumbnails"></div>
+      </div>
+
+      <div class="game-details">
+        <h1 id="game-title"></h1>
+        <p id="game-description"></p>
+        <p><strong>Desenvolvedor:</strong> <span id="game-dev"></span></p>
+        <p><strong>Categoria:</strong> <span id="game-cat"></span></p>
+        <p><strong>Ano:</strong> <span id="game-year"></span></p>
+        <p class="price"><strong>Preço:</strong> R$ <span id="game-price"></span></p>
+        <button class="buy-btn">Comprar</button>
+        <button class="fav-btn"><i class="fa-solid fa-star"></i> Adicionar à lista de desejos</button>
+      </div>
+    </section>
+
+    <!-- 📊 ÁREA DE AVALIAÇÃO DE JOGOS -->
+   <section class="rating-section">
+  <h2>Avalie este jogo</h2>
+
+  <!-- Média de avaliação -->
+  <div class="average-rating" id="average-rating">
+    ⭐ <span id="avg-value">0.0</span> de 5 — <span id="total-reviews">0</span> avaliações
+  </div>
+
+  <!-- Estrelas invertidas -->
+  <div class="star-rating" id="star-rating">
+    <i class="fa-solid fa-star" data-value="5"></i>
+    <i class="fa-solid fa-star" data-value="4"></i>
+    <i class="fa-solid fa-star" data-value="3"></i>
+    <i class="fa-solid fa-star" data-value="2"></i>
+    <i class="fa-solid fa-star" data-value="1"></i>
+  </div>
+
+  <textarea id="review-text" placeholder="Deixe seu comentário..." rows="4"></textarea>
+  <button id="submit-review">Enviar Avaliação</button>
+
+  <div class="reviews-list" id="reviews-list">
+    <h3>Comentários Recentes</h3>
+    <ul id="reviews"></ul>
+  </div>
+</section>
+
+  </main>
+
+  <script src="/js/descricao.js"></script>
+  <script src="/js/categoria.js"></script>
+<!-- Pop-up lateral: feedback de compra -->
+<div id="toast" class="toast hidden">
+  <i class="fa-solid fa-cart-plus"></i>
+  <span>Jogo adicionado ao carrinho!</span>
+</div>
+
+<!-- Alternador de tema -->
+<div id="theme-toggle" title="Alternar modo claro/escuro">
+  <i class="fa-solid fa-moon"></i>
+</div>
+
+</body>
+</html>

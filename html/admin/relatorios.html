@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tok-Store</title>
+  <link rel="stylesheet" href="/css/relatorios.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body><aside class="sidebar">
+  <h2><span class="logo"><i class="fa-solid fa-gamepad"></i></span>Tok-Store</h2>
+  <p class="subtitle">Admin Dashboard</p>
+
+  <nav class="menu">
+    <a href="admin.html" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+    <a href="empresas.html"><i class="fa-solid fa-building"></i> Empresas</a>
+    <a href="categorias.html"><i class="fa-solid fa-tags"></i> Categorias</a>
+    <a href="jogos.html"><i class="fa-solid fa-gamepad"></i> Jogos</a>
+    <a href="carrinhoadmin.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho</a>
+    <a href="compras.html"><i class="fa-solid fa-credit-card"></i> Compras</a>
+    <a href="avaliacoes.html"><i class="fa-solid fa-comments"></i> Avaliações</a>
+    <a href="relatorios.html"><i class="fa-solid fa-chart-column"></i> Relatórios</a>
+  </nav>
+
+  <div class="menu logout">
+    <a href="/login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+  </div>
+</aside>
+
+  <main class="content">
+    <header>
+      <h1>📊 Relatórios e Indicadores</h1>
+      <p>Visualize métricas completas sobre jogos, empresas e categorias.</p>
+    </header>
+
+    <section class="buttons">
+      <button class="btn primary">📊 Vendas</button>
+      <button class="btn secondary">🏢 Empresas</button>
+      <button class="btn success">🏷️ Categorias</button>
+      <button class="btn warning">⭐ Rankings</button>
+    </section>
+
+    <section class="charts">
+      <div class="chart-card">
+        <h3>Jogos Mais Vendidos</h3>
+        <div class="chart-wrapper"><canvas id="chartVendas"></canvas></div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Ranking por Categoria</h3>
+        <div class="chart-wrapper"><canvas id="chartCategoria"></canvas></div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Vendas por Empresa</h3>
+        <div class="chart-wrapper"><canvas id="chartEmpresa"></canvas></div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Evolução de Vendas Mensais</h3>
+        <div class="chart-wrapper"><canvas id="chartEvolucao"></canvas></div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Avaliações Médias por Jogo</h3>
+        <div class="chart-wrapper"><canvas id="chartNotas"></canvas></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/relatorios.js"></script>
+</body>
+</html>
