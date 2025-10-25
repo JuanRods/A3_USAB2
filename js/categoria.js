@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const categoryList = document.getElementById("category-list");
   const inputBusca = document.getElementById("busca");
   const containerCards = document.getElementById("card_buys-container");
-
   const jogos = [
     {
       index: 0,
@@ -14,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "CD Projekt Red",
       categoria: "RPG",
       imagens: [
-        "img/the-witcher-3.jpg",
-        "img/the-witcher-3-1.jpg",
-        "img/the-witcher-3-2.jpg",
-        "img/the-witcher-3-3.jpg"
+        "/img/the-witcher-3.jpg",
+        "/img/the-witcher-3-1.jpg",
+        "/img/the-witcher-3-2.jpg",
+        "/img/the-witcher-3-3.jpg"
       ],
       avaliacoes: [
         "Um dos mundos mais vivos e bem construídos dos games.",
@@ -34,10 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Rockstar Games",
       categoria: "Ação",
       imagens: [
-        "img/red-dead2.jpg",
-        "img/red-dead2-1.jpg",
-        "img/red-dead2-2.jpg",
-        "img/red-dead2-3.jpg"
+        "/img/red-dead2.jpg",
+        "/img/red-dead2-1.jpg",
+        "/img/red-dead2-2.jpg",
+        "/img/red-dead2-3.jpg"
       ],
       avaliacoes: [
         "Ambientação e narrativa no mais alto nível.",
@@ -54,10 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Nintendo",
       categoria: "Aventura",
       imagens: [
-        "img/zelda.jpg",
-        "img/zelda-1.jpg",
-        "img/zelda-2.jpg",
-        "img/zelda-3.jpg"
+        "/img/zelda.jpg",
+        "/img/zelda-1.jpg",
+        "/img/zelda-2.jpg",
+        "/img/zelda-3.jpg"
       ],
       avaliacoes: [
         "Exploração que realmente recompensa a curiosidade.",
@@ -74,10 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "FromSoftware",
       categoria: "RPG de Ação",
       imagens: [
-        "img/elden-ring.jpg",
-        "img/elden-ring-1.jpg",
-        "img/elden-ring-2.jpg",
-        "img/elden-ring-3.jpg"
+        "/img/elden-ring.jpg",
+        "/img/elden-ring-1.jpg",
+        "/img/elden-ring-2.jpg",
+        "/img/elden-ring-3.jpg"
       ],
       avaliacoes: [
         "Um marco nos jogos de mundo aberto.",
@@ -94,10 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Rockstar Games",
       categoria: "Ação / Mundo Aberto",
       imagens: [
-        "img/gta5.jpg",
-        "img/gta5-1.jpg",
-        "img/gta5-2.jpg",
-        "img/gta5-3.jpg"
+        "/img/gta5.jpg",
+        "/img/gta5-1.jpg",
+        "/img/gta5-2.jpg",
+        "/img/gta5-3.jpg"
       ],
       avaliacoes: [
         "Diversão e liberdade total em um mundo vibrante.",
@@ -114,10 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "FromSoftware",
       categoria: "RPG de Ação",
       imagens: [
-        "img/dark-souls3.jpg",
-        "img/dark-souls3-1.jpg",
-        "img/dark-souls3-2.jpg",
-        "img/dark-souls3-3.jpg"
+        "/img/dark-souls3.jpg",
+        "/img/dark-souls3-1.jpg",
+        "/img/dark-souls3-2.jpg",
+        "/img/dark-souls3-3.jpg"
       ],
       avaliacoes: [
         "Difícil, mas extremamente satisfatório.",
@@ -134,10 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Ubisoft",
       categoria: "Ação / Aventura",
       imagens: [
-        "img/ac-valhalla.jpg",
-        "img/ac-valhalla-1.jpg",
-        "img/ac-valhalla-2.jpg",
-        "img/ac-valhalla-3.jpg"
+        "/img/ac-valhalla.jpg",
+        "/img/ac-valhalla-1.jpg",
+        "/img/ac-valhalla-2.jpg",
+        "/img/ac-valhalla-3.jpg"
       ],
       avaliacoes: [
         "Imersão total na era viking.",
@@ -154,10 +153,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Capcom",
       categoria: "Terror / Ação",
       imagens: [
-        "img/re4-remake.jpg",
-        "img/re4-remake-1.jpg",
-        "img/re4-remake-2.jpg",
-        "img/re4-remake-3.jpg"
+        "/img/re4-remake.jpg",
+        "/img/re4-remake-1.jpg",
+        "/img/re4-remake-2.jpg",
+        "/img/re4-remake-3.jpg"
       ],
       avaliacoes: [
         "Um remake feito com excelência.",
@@ -174,10 +173,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "CD Projekt Red",
       categoria: "RPG / Futurista",
       imagens: [
-        "img/cyberpunk.jpg",
-        "img/cyberpunk-1.jpg",
-        "img/cyberpunk-2.jpg",
-        "img/cyberpunk-3.jpg"
+        "/img/cyberpunk.jpg",
+        "/img/cyberpunk-1.jpg",
+        "/img/cyberpunk-2.jpg",
+        "/img/cyberpunk-3.jpg"
       ],
       avaliacoes: [
         "Night City é uma experiência visual incrível.",
@@ -194,10 +193,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Santa Monica Studio",
       categoria: "Ação / Aventura",
       imagens: [
-        "img/gow-2018.jpg",
-        "img/gow-2018-1.jpg",
-        "img/gow-2018-2.jpg",
-        "img/gow-2018-3.jpg"
+        "/img/gow-2018.jpg",
+        "/img/gow-2018-1.jpg",
+        "/img/gow-2018-2.jpg",
+        "/img/gow-2018-3.jpg"
       ],
       avaliacoes: [
         "História poderosa e emocionante.",
@@ -214,10 +213,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Santa Monica Studio",
       categoria: "Ação / Aventura",
       imagens: [
-        "img/gow-ragnarok.jpg",
-        "img/gow-ragnarok-1.jpg",
-        "img/gow-ragnarok-2.jpg",
-        "img/gow-ragnarok-3.jpg"
+        "/img/gow-ragnarok.jpg",
+        "/img/gow-ragnarok-1.jpg",
+        "/img/gow-ragnarok-2.jpg",
+        "/img/gow-ragnarok-3.jpg"
       ],
       avaliacoes: [
         "Uma sequência à altura do original.",
@@ -234,10 +233,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Guerrilla Games",
       categoria: "Aventura / Mundo Aberto",
       imagens: [
-        "img/horizon-fw.jpg",
-        "img/horizon-fw-1.jpg",
-        "img/horizon-fw-2.jpg",
-        "img/horizon-fw-3.jpg"
+        "/img/horizon-fw.jpg",
+        "/img/horizon-fw-1.jpg",
+        "/img/horizon-fw-2.jpg",
+        "/img/horizon-fw-3.jpg"
       ],
       avaliacoes: [
         "Visualmente deslumbrante.",
@@ -254,10 +253,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Insomniac Games",
       categoria: "Ação / Aventura",
       imagens: [
-        "img/spiderman.jpg",
-        "img/spiderman-1.jpg",
-        "img/spiderman-2.jpg",
-        "img/spiderman-3.jpg"
+        "/img/spiderman.jpg",
+        "/img/spiderman-1.jpg",
+        "/img/spiderman-2.jpg",
+        "/img/spiderman-3.jpg"
       ],
       avaliacoes: [
         "Sensação incrível de ser o Homem-Aranha.",
@@ -274,10 +273,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Insomniac Games",
       categoria: "Ação / Aventura",
       imagens: [
-        "img/miles-morales.jpg",
-        "img/miles-morales-1.jpg",
-        "img/miles-morales-2.jpg",
-        "img/miles-morales-3.jpg"
+        "/img/miles-morales.jpg",
+        "/img/miles-morales-1.jpg",
+        "/img/miles-morales-2.jpg",
+        "/img/miles-morales-3.jpg"
       ],
       avaliacoes: [
         "Carismático e cheio de energia.",
@@ -294,10 +293,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "FromSoftware",
       categoria: "Ação / Desafio",
       imagens: [
-        "img/sekiro.jpg",
-        "img/sekiro-1.jpg",
-        "img/sekiro-2.jpg",
-        "img/sekiro-3.jpg"
+        "/img/sekiro.jpg",
+        "/img/sekiro-1.jpg",
+        "/img/sekiro-2.jpg",
+        "/img/sekiro-3.jpg"
       ],
       avaliacoes: [
         "Sistema de combate genial.",
@@ -314,10 +313,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Kojima Productions",
       categoria: "Aventura / Exploração",
       imagens: [
-        "img/death-stranding.jpg",
-        "img/death-stranding-1.jpg",
-        "img/death-stranding-2.jpg",
-        "img/death-stranding-3.jpg"
+        "/img/death-stranding.jpg",
+        "/img/death-stranding-1.jpg",
+        "/img/death-stranding-2.jpg",
+        "/img/death-stranding-3.jpg"
       ],
       avaliacoes: [
         "Único e diferente de tudo no mercado.",
@@ -334,10 +333,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Sucker Punch",
       categoria: "Ação / Aventura",
       imagens: [
-        "img/ghost-tsushima.jpg",
-        "img/ghost-tsushima-1.jpg",
-        "img/ghost-tsushima-2.jpg",
-        "img/ghost-tsushima-3.jpg"
+        "/img/ghost-tsushima.jpg",
+        "/img/ghost-tsushima-1.jpg",
+        "/img/ghost-tsushima-2.jpg",
+        "/img/ghost-tsushima-3.jpg"
       ],
       avaliacoes: [
         "Uma carta de amor ao Japão feudal.",
@@ -354,10 +353,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Infinity Ward",
       categoria: "FPS",
       imagens: [
-        "img/mw2.jpg",
-        "img/mw2-1.jpg",
-        "img/mw2-2.jpg",
-        "img/mw2-3.jpg"
+        "/img/mw2.jpg",
+        "/img/mw2-1.jpg",
+        "/img/mw2-2.jpg",
+        "/img/mw2-3.jpg"
       ],
       avaliacoes: [
         "Ação frenética e controles precisos.",
@@ -374,10 +373,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Larian Studios",
       categoria: "RPG / Estratégia",
       imagens: [
-        "img/bg3.jpg",
-        "img/bg3-1.jpg",
-        "img/bg3-2.jpg",
-        "img/bg3-3.jpg"
+        "/img/bg3.jpg",
+        "/img/bg3-1.jpg",
+        "/img/bg3-2.jpg",
+        "/img/bg3-3.jpg"
       ],
       avaliacoes: [
         "Interatividade e escolhas como nunca antes.",
@@ -394,10 +393,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Capcom",
       categoria: "RPG / Ação",
       imagens: [
-        "img/mhw.jpg",
-        "img/mhw-1.jpg",
-        "img/mhw-2.jpg",
-        "img/mhw-3.jpg"
+        "/img/mhw.jpg",
+        "/img/mhw-1.jpg",
+        "/img/mhw-2.jpg",
+        "/img/mhw-3.jpg"
       ],
       avaliacoes: [
         "Caçadas empolgantes e monstros incríveis.",
@@ -414,10 +413,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Ubisoft",
       categoria: "Ação / Mundo Aberto",
       imagens: [
-        "img/farcry6.jpg",
-        "img/farcry6-1.jpg",
-        "img/farcry6-2.jpg",
-        "img/farcry6-3.jpg"
+        "/img/farcry6.jpg",
+        "/img/farcry6-1.jpg",
+        "/img/farcry6-2.jpg",
+        "/img/farcry6-3.jpg"
       ],
       avaliacoes: [
         "Explosivo, colorido e cheio de personalidade.",
@@ -434,10 +433,10 @@ document.addEventListener("DOMContentLoaded", () => {
       dev: "Bethesda",
       categoria: "RPG / Exploração",
       imagens: [
-        "img/starfield.jpg",
-        "img/starfield-1.jpg",
-        "img/starfield-2.jpg",
-        "img/starfield-3.jpg"
+        "/img/starfield.jpg",
+        "/img/starfield-1.jpg",
+        "/img/starfield-2.jpg",
+        "/img/starfield-3.jpg"
       ],
       avaliacoes: [
         "Exploração espacial fascinante.",
@@ -449,16 +448,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const categoriasUnicas = ["Todos", ...new Set(jogos.map(j => j.categoria))];
 
-  // Cria os elementos das categorias dinamicamente
-  function criarCategorias() {
-    categoryList.innerHTML = "";
-    categoriasUnicas.forEach(categoria => {
-      const li = document.createElement("li");
-      li.className = "cardc";
-      li.textContent = categoria;
-      categoryList.appendChild(li);
+  // Ícones por categoria (NOVO)
+  const iconesPorCategoria = {
+    "Ação": "fa-gun",
+    "RPG": "fa-hat-wizard",
+    "Aventura": "fa-mountain-sun",
+    "Estratégia": "fa-chess-board",
+    "Terror": "fa-ghost",
+    "Indie": "fa-puzzle-piece",
+    "FPS": "fa-bullseye",
+    "Exploração": "fa-compass",
+    "Futurista": "fa-robot",
+    "Mundo Aberto": "fa-earth-americas",
+    "Desafio": "fa-fire"
+  };
+
+  const listaCategorias = document.getElementById("category-list");
+  listaCategorias.innerHTML = "";
+
+  // Renderização das categorias com ícones (NOVO)
+  categoriasUnicas.forEach(cat => {
+    const li = document.createElement("li");
+    li.classList.add("cardc");
+    const iconClass = iconesPorCategoria[cat] || "fa-gamepad";
+    li.innerHTML = `<i class="fa-solid ${iconClass}"></i> ${cat}`;
+
+    li.addEventListener("click", () => {
+      document.querySelectorAll(".cardc").forEach(c => c.classList.remove("selected"));
+      li.classList.add("selected");
+      categoriaSelecionada = cat;
+      aplicarFiltros();
     });
-  }
+
+    listaCategorias.appendChild(li);
+  });
 
   // Cria cada card de jogo
   function criarCard(jogo, index) {
@@ -466,69 +489,57 @@ document.addEventListener("DOMContentLoaded", () => {
     card.className = "card_buy";
 
     const img = document.createElement("img");
-
-    // imagem principal
     img.src = (jogo.imagens && jogo.imagens.length > 0)
       ? jogo.imagens[0]
-      : "img/placeholder.jpg";
-
+      : "/img/placeholder.jpg";
     img.alt = jogo.nome;
-
-    // se a imagem principal não carregar → substitui por placeholder
     img.onerror = () => {
-      img.src = "img/placeholder.jpg";
+      img.src = "/img/placeholder.jpg";
     };
-    
+
     const rating = document.createElement("div");
     rating.className = "card-rating";
     rating.innerHTML = `<i class="fa-solid fa-star"></i> ${jogo.avaliacao ?? (Math.random() * 2 + 3).toFixed(1)}`;
 
-    // ➕ Botão de adicionar
     const addFav = document.createElement("div");
     addFav.className = "add-wishlist";
     addFav.innerHTML = `<i class="fa-solid fa-plus"></i>`;
     addFav.title = "Adicionar à lista de desejos";
-   addFav.onclick = (event) => {
-  event.stopPropagation();
-  adicionarFavorito(jogo);
-};
+    addFav.onclick = (event) => {
+      event.stopPropagation();
+      adicionarFavorito(jogo);
+    };
 
-    // 🧾 Informações
     const info = document.createElement("div");
     info.className = "card-info";
-
     const titulo = document.createElement("h3");
     titulo.textContent = jogo.nome;
-
     const descricao = document.createElement("p");
     descricao.textContent = jogo.descricao;
-
     const preco = document.createElement("span");
     preco.className = "price";
     preco.textContent = `R$ ${jogo.preco.toFixed(2)}`;
-
     const buy = document.createElement("button");
     buy.className = "buy-btn";
     buy.textContent = "Comprar";
-     buy.onclick = (event) => {
-    event.stopPropagation(); // impede abrir descrição
-    adicionarAoCarrinho(jogo.nome, jogo.preco);
-  };
-
+    buy.onclick = (event) => {
+      event.stopPropagation();
+      adicionarAoCarrinho(jogo.nome, jogo.preco);
+    };
     info.append(titulo, descricao, preco, buy);
+
     const top = document.createElement("div");
     top.className = "card-top";
     top.append(rating, addFav);
 
     card.append(img, top, info);
-card.addEventListener("click", () => {
-    window.location.href = `descricao.html?index=${jogo.index}`;
-  });
+    card.addEventListener("click", () => {
+      window.location.href = `descricao.html?index=${jogo.index}`;
+    });
     return card;
-    
   }
 
-  // Renderiza a lista de jogos na tela
+  // Renderiza os jogos
   function renderizarJogos(lista) {
     containerCards.innerHTML = "";
     lista.forEach((jogo, index) => {
@@ -545,34 +556,28 @@ card.addEventListener("click", () => {
   }
 
   function adicionarFavorito(jogo) {
-  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-  if (!loggedUser) {
-    alert("Você precisa estar logado para favoritar jogos.");
-    return;
+    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    if (!loggedUser) {
+      alert("Você precisa estar logado para favoritar jogos.");
+      return;
+    }
+
+    const email = loggedUser.email;
+    const allFavorites = JSON.parse(localStorage.getItem("wishlistPorUsuario")) || {};
+    const userFavorites = allFavorites[email] || [];
+
+    const index = userFavorites.findIndex(j => j.nome === jogo.nome);
+    if (index === -1) {
+      userFavorites.push({ nome: jogo.nome, preco: jogo.preco, index: jogo.index });
+    } else {
+      userFavorites.splice(index, 1);
+    }
+
+    allFavorites[email] = userFavorites;
+    localStorage.setItem("wishlistPorUsuario", JSON.stringify(allFavorites));
+
+    alert(`${jogo.nome} foi ${index === -1 ? "adicionado à" : "removido da"} wishlist.`);
   }
-
-  const email = loggedUser.email;
-  const allFavorites = JSON.parse(localStorage.getItem("wishlistPorUsuario")) || {};
-  const userFavorites = allFavorites[email] || [];
-
-  const index = userFavorites.findIndex(j => j.nome === jogo.nome);
-  if (index === -1) {
-    userFavorites.push({
-      nome: jogo.nome,
-      preco: jogo.preco,
-      index: jogo.index,
-    });
-  } else {
-    userFavorites.splice(index, 1);
-  }
-
-  allFavorites[email] = userFavorites;
-  localStorage.setItem("wishlistPorUsuario", JSON.stringify(allFavorites));
-
-  // feedback visual
-  alert(`${jogo.nome} foi ${index === -1 ? "adicionado à" : "removido da"} wishlist.`);
-}
-
 
   // Filtra os jogos pela categoria
   function filtrarPorCategoria(categoria) {
@@ -586,135 +591,37 @@ card.addEventListener("click", () => {
     return jogos.filter(jogo => jogo.nome.toLowerCase().includes(termo));
   }
 
-  // Aplica os filtros combinados de categoria e texto
+  // Aplica filtros combinados
   let categoriaSelecionada = "Todos";
 
   function aplicarFiltros() {
     let filtrados = jogos;
-
     if (categoriaSelecionada !== "Todos") {
-      filtrados = filtrados.filter(j => j.categoria === categoriaSelecionada);
+      filtrados = filtrados.filter(j => j.categoria.includes(categoriaSelecionada));
     }
-
     const textoBusca = inputBusca.value.trim().toLowerCase();
     if (textoBusca) {
       filtrados = filtrados.filter(j => j.nome.toLowerCase().includes(textoBusca));
     }
-
     renderizarJogos(filtrados);
   }
 
-  // Toggle que controla a visibilidade da lista de categorias via classe CSS
   toggleBtn.addEventListener("click", () => {
     categoryList.classList.toggle("visible");
   });
 
-  // Evento para clique nas categorias
   categoryList.addEventListener("click", (e) => {
     if (e.target.classList.contains("cardc")) {
       categoriaSelecionada = e.target.textContent.trim();
-
-      // Destaca a categoria selecionada
       document.querySelectorAll(".cardc").forEach(el => el.classList.remove("selected"));
       e.target.classList.add("selected");
-
       aplicarFiltros();
     }
   });
 
-  // Evento de busca ao digitar
   inputBusca?.addEventListener("input", () => {
     aplicarFiltros();
   });
 
-  // Inicialização
-  criarCategorias();
   renderizarJogos(jogos);
-});
-
-const slides = document.querySelector('.carousel-slide');
-const items = document.querySelectorAll('.carousel-item');
-const nextBtn = document.querySelector('.next-btn');
-const prevBtn = document.querySelector('.prev-btn');
-const dotsContainer = document.querySelector('.nav-dots');
-let current = 0;
-let autoSlide;
-
-// Criar bolinhas
-items.forEach((_, i) => {
-  const dot = document.createElement('span');
-  dot.classList.add('dot');
-  dot.addEventListener('click', () => {
-    current = i;
-    showSlide();
-    resetAutoSlide();
-  });
-  dotsContainer.appendChild(dot);
-});
-
-const dots = document.querySelectorAll('.dot');
-
-// Mostrar slide atual
-function showSlide() {
-  if (current >= items.length) current = 0;
-  if (current < 0) current = items.length - 1;
-  slides.style.transform = `translateX(-${current * 100}%)`;
-
-  dots.forEach((d, i) => d.classList.toggle('active', i === current));
-}
-
-// Navegação manual
-nextBtn.addEventListener('click', () => {
-  current++;
-  showSlide();
-  resetAutoSlide();
-});
-
-prevBtn.addEventListener('click', () => {
-  current--;
-  showSlide();
-  resetAutoSlide();
-});
-
-// Troca automática
-function autoNext() {
-  current++;
-  showSlide();
-}
-
-function resetAutoSlide() {
-  clearInterval(autoSlide);
-  autoSlide = setInterval(autoNext, 6000);
-}
-
-// Inicialização
-showSlide();
-autoSlide = setInterval(autoNext, 6000);
-
-// ===== Chatbot =====
-const chatbotBtn = document.getElementById('chatbot-btn');
-const chatbotBox = document.getElementById('chatbot-box');
-chatbotBtn.addEventListener('click', () => chatbotBox.classList.toggle('hidden'));
-
-const chatInput = document.getElementById('chat-input');
-const sendBtn = document.getElementById('send-btn');
-const chatBody = document.getElementById('chat-body');
-
-sendBtn.addEventListener('click', () => {
-  const msg = chatInput.value.trim();
-  if (!msg) return;
-  const userMsg = document.createElement('p');
-  userMsg.classList.add('user');
-  userMsg.textContent = msg;
-  chatBody.appendChild(userMsg);
-  chatInput.value = '';
-
-  const botMsg = document.createElement('p');
-  botMsg.classList.add('bot');
-  botMsg.textContent = "🤖 Processando...";
-  chatBody.appendChild(botMsg);
-
-  setTimeout(() => {
-    botMsg.textContent = "Aqui estão algumas opções de jogos que posso te recomendar!";
-  }, 1000);
 });

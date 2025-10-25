@@ -30,7 +30,7 @@ body {
 }
 
 .sidebar:hover {
-    background-color:  #0a1a2b;
+    background-color:  transparent;
     width: 200px;
 }
 

@@ -55,8 +55,7 @@ body {
   transition: background 0.3s;
 }
 
-.sidebar .menu a:hover,
-.sidebar .menu a.active {
+.sidebar .menu a:hover{
   background: #e9f0ff;
   color: #0055ff;
 }
@@ -181,4 +180,12 @@ th, td {
   padding: 12px;
   border-bottom: 1px solid #eee;
   text-align: left;
+}
+.menu.logout a {
+  color: #f87171;
+  font-weight: 600;
+}
+
+.menu.logout a:hover {
+  color: #ff4d4d;
 }

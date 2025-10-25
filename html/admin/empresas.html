@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Tok-Store</title>
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link rel="stylesheet" href="/css/empresas.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="/css/empresas.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2><span class="logo"><i class="fa-solid fa-gamepad"></i></span>Tok-Store</h2>
+      <p class="subtitle">Admin Dashboard</p>
+
+      <nav class="menu">
+        <a href="admin.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="empresas.html" class="active"><i class="fa-solid fa-building"></i> Empresas</a>
+        <a href="categorias.html"><i class="fa-solid fa-tags"></i> Categorias</a>
+        <a href="jogos.html"><i class="fa-solid fa-gamepad"></i> Jogos</a>
+        <a href="carrinhoadmin.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho</a>
+        <a href="compras.html"><i class="fa-solid fa-credit-card"></i> Compras</a>
+        <a href="avaliacoes.html"><i class="fa-solid fa-comments"></i> Avaliações</a>
+        <a href="relatorios.html"><i class="fa-solid fa-chart-column"></i> Relatórios</a>
+      </nav>
+
+      <div class="menu logout">
+        <a href="/login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="header">
+        <h1>Gerenciar Empresas</h1>
+      </header>
+
+      <!-- Formulário -->
+      <section class="form-section">
+        <form id="form-empresa">
+          <input type="text" placeholder="Nome da Empresa" required />
+          <input type="text" placeholder="CNPJ" required />
+          <button type="submit" class="btn-salvar">Salvar</button>
+        </form>
+      </section>
+
+      <!-- Tabela -->
+      <section class="table-section">
+        <h2>Empresas Cadastradas</h2>
+        <table class="empresa-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CNPJ</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>CD Projekt Red</td><td>12.345.678/0001-90</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Rockstar Games</td><td>98.765.432/0001-55</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Nintendo</td><td>56.123.987/0001-77</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Mojang</td><td>78.456.321/0001-12</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>ConcernedApe</td><td>11.222.333/0001-44</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Valve</td><td>22.333.444/0001-88</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Innersloth</td><td>33.444.555/0001-22</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Dumativa</td><td>44.555.666/0001-33</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Guerrilla Games</td><td>55.666.777/0001-44</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>FromSoftware</td><td>66.777.888/0001-55</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Infinity Ward</td><td>77.888.999/0001-66</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Bethesda Game Studios</td><td>88.999.000/0001-77</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Capcom</td><td>99.000.111/0001-88</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Atlus</td><td>10.111.222/0001-99</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Ryu Ga Gotoku Studio</td><td>12.222.333/0001-00</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

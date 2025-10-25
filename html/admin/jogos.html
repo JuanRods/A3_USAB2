@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Tok-Store</title>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link rel="stylesheet" href="/css/jogos.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <script defer src="/js/main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2><span class="logo"><i class="fa-solid fa-gamepad"></i></span>Tok-Store</h2>
+      <p class="subtitle">Admin Dashboard</p>
+
+      <nav class="menu">
+        <a href="admin.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="empresas.html"><i class="fa-solid fa-building"></i> Empresas</a>
+        <a href="categorias.html"><i class="fa-solid fa-tags"></i> Categorias</a>
+        <a href="jogos.html" class="active"><i class="fa-solid fa-gamepad"></i> Jogos</a>
+        <a href="carrinhoadmin.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho</a>
+        <a href="compras.html"><i class="fa-solid fa-credit-card"></i> Compras</a>
+        <a href="avaliacoes.html"><i class="fa-solid fa-comments"></i> Avaliações</a>
+        <a href="relatorios.html"><i class="fa-solid fa-chart-column"></i> Relatórios</a>
+      </nav>
+
+      <div class="menu logout">
+        <a href="/login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="content">
+      <header class="header"><h1>Gerenciar Jogos</h1></header>
+
+      <!-- Formulário -->
+      <section class="form-section">
+        <form id="form-jogo">
+          <input type="text" placeholder="Nome do Jogo" required />
+          <select required>
+            <option value="">Selecione Categoria</option>
+            <option>Ação</option>
+            <option>Aventura</option>
+            <option>RPG</option>
+            <option>Plataforma</option>
+            <option>Puzzle</option>
+            <option>Sandbox</option>
+            <option>Simulação</option>
+            <option>VR</option>
+            <option>Tiro</option>
+            <option>Social</option>
+            <option>Horror</option>
+          </select>
+
+          <select required>
+            <option value="">Selecione Empresa</option>
+            <option>CD Projekt Red</option>
+            <option>Rockstar Games</option>
+            <option>Nintendo</option>
+            <option>Mojang</option>
+            <option>ConcernedApe</option>
+            <option>Valve</option>
+            <option>Innersloth</option>
+            <option>Dumativa</option>
+            <option>Guerrilla Games</option>
+            <option>FromSoftware</option>
+            <option>Infinity Ward</option>
+            <option>Bethesda Game Studios</option>
+            <option>Capcom</option>
+            <option>Atlus</option>
+            <option>Ryu Ga Gotoku Studio</option>
+          </select>
+
+          <input type="number" step="0.01" placeholder="Preço (R$)" required />
+          <textarea placeholder="Descrição"></textarea>
+          <button type="submit" class="btn-salvar">Salvar</button>
+        </form>
+      </section>
+
+      <!-- Tabela -->
+      <section class="table-section">
+        <h2>Jogos Cadastrados</h2>
+        <table class="jogos-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Ano</th>
+              <th>Preço</th>
+              <th>Descrição</th>
+              <th>Empresa</th>
+              <th>Categoria</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>The Witcher 3: Wild Hunt</td><td>2015</td><td>59.99</td><td>RPG aclamado pela crítica.</td><td>CD Projekt Red</td><td>RPG</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Grand Theft Auto V</td><td>2013</td><td>29.99</td><td>Ação em mundo aberto.</td><td>Rockstar Games</td><td>Ação</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Red Dead Redemption 2</td><td>2018</td><td>59.99</td><td>Épico de faroeste moderno.</td><td>Rockstar Games</td><td>Aventura</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>The Legend of Zelda: Breath of the Wild</td><td>2017</td><td>59.99</td><td>Vasto mundo para explorar.</td><td>Nintendo</td><td>Aventura</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Minecraft</td><td>2011</td><td>26.95</td><td>Construa qualquer coisa imaginável.</td><td>Mojang</td><td>Sandbox</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Stardew Valley</td><td>2016</td><td>14.99</td><td>Simulação de fazenda.</td><td>ConcernedApe</td><td>Simulação</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Portal 2</td><td>2011</td><td>9.99</td><td>Jogo de quebra-cabeça.</td><td>Valve</td><td>Puzzle</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Cyberpunk 2077</td><td>2020</td><td>59.99</td><td>Futuro distópico e neon.</td><td>CD Projekt Red</td><td>RPG</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Among Us</td><td>2018</td><td>4.99</td><td>Dedução social multiplayer.</td><td>Innersloth</td><td>Social</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>A Lenda do Herói</td><td>2016</td><td>59.99</td><td>Aventura musical brasileira.</td><td>Dumativa</td><td>Plataforma</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Bloodborne</td><td>2015</td><td>59.99</td><td>Desafiante e sombrio.</td><td>FromSoftware</td><td>RPG</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Horizon Zero Dawn</td><td>2017</td><td>49.99</td><td>Caça em um mundo pós-apocalíptico.</td><td>Guerrilla Games</td><td>Aventura</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Resident Evil 7: Biohazard</td><td>2017</td><td>39.99</td><td>Horror em primeira pessoa.</td><td>Capcom</td><td>Horror</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Persona 5 Royal</td><td>2019</td><td>59.99</td><td>RPG com elementos de simulação social.</td><td>Atlus</td><td>RPG</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+            <tr><td>Yakuza: Like a Dragon</td><td>2020</td><td>59.99</td><td>RPG com humor e drama japonês.</td><td>Ryu Ga Gotoku Studio</td><td>RPG</td><td><button class="btn-editar">Editar</button><button class="btn-excluir">Excluir</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

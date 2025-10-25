@@ -1,5 +1,6 @@
 .wishlist-container {
-  margin-left: 80px;
+  margin-top: 1%;
+  margin-left: 55px;
   padding: 60px 80px;
   color: #fff;
   background: radial-gradient(circle at 20% 30%, #0b0e16, #05080c 80%);
@@ -7,6 +8,7 @@
 }
 
 .wishlist-container h1 {
+  margin-top: 50px;
   font-size: 2rem;
   font-weight: 700;
   color: #fff;

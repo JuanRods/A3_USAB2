@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Tok-Store</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link rel="stylesheet" href="/css/avaliacoes.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <script defer src="/js/main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2><span class="logo"><i class="fa-solid fa-gamepad"></i></span>Tok-Store</h2>
+      <p class="subtitle">Admin Dashboard</p>
+
+      <nav class="menu">
+        <a href="admin.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="empresas.html"><i class="fa-solid fa-building"></i> Empresas</a>
+        <a href="categorias.html"><i class="fa-solid fa-tags"></i> Categorias</a>
+        <a href="jogos.html"><i class="fa-solid fa-gamepad"></i> Jogos</a>
+        <a href="carrinhoadmin.html"><i class="fa-solid fa-cart-shopping"></i> Carrinho</a>
+        <a href="compras.html"><i class="fa-solid fa-credit-card"></i> Compras</a>
+        <a href="avaliacoes.html" class="active"><i class="fa-solid fa-comments"></i> Avaliações</a>
+        <a href="relatorios.html"><i class="fa-solid fa-chart-column"></i> Relatórios</a>
+      </nav>
+
+      <div class="menu logout">
+        <a href="/login.html"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+      </div>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="content">
+      <header class="header"><h1>Avaliações de Jogos</h1></header>
+
+      <!-- Formulário -->
+      <section class="form-section">
+        <form id="form-avaliacao">
+          <select required>
+            <option value="">Selecione o jogo</option>
+            <option>The Witcher 3</option>
+            <option>Cyberpunk 2077</option>
+            <option>Red Dead Redemption 2</option>
+            <option>Stardew Valley</option>
+            <option>Horizon Zero Dawn</option>
+            <option>Bloodborne</option>
+            <option>Persona 5 Royal</option>
+            <option>Yakuza: Like a Dragon</option>
+          </select>
+
+          <textarea placeholder="Digite seu comentário" required></textarea>
+          <input type="number" min="1" max="5" placeholder="Nota (1-5)" required />
+          <button type="submit" class="btn-enviar">Enviar Avaliação</button>
+        </form>
+      </section>
+
+      <!-- Tabela -->
+      <section class="table-section">
+        <h2>Comentários Recentes</h2>
+        <table class="avaliacoes-table">
+          <thead>
+            <tr>
+              <th>Jogo</th>
+              <th>Comentário</th>
+              <th>Nota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>The Witcher 3</td><td>Excelente jogo!</td><td>5</td></tr>
+            <tr><td>Cyberpunk 2077</td><td>Visual incrível e história densa.</td><td>4</td></tr>
+            <tr><td>Stardew Valley</td><td>Viciante e relaxante!</td><td>5</td></tr>
+            <tr><td>Bloodborne</td><td>Difícil, mas gratificante.</td><td>5</td></tr>
+            <tr><td>Yakuza: Like a Dragon</td><td>RPG divertido e com ótimo humor.</td><td>4</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Tok-Store</title>
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/perfil.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="title"><i class="fa-solid fa-gear"></i> Configurações</div>
+      <div class="search-support">
+        <input type="text" placeholder="Pesquisar jogos..." />
+        <button><i class="fa-solid fa-headset"></i> Suporte</button>
+      </div>
+    </header>
+<aside class="sidebar">
+  <div class="sidebar-top">
+    <img src="/img/chaos-icon.jpg" alt="Logo" class="logo-icon" />
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+      <li><a href="explorar.html"><i class="fa-solid fa-compass"></i><span>Explorar</span></a></li>
+      <li><a href="ranking.html"><i class="fa-solid fa-ranking-star"></i><span>Ranking dos Melhores</span></a></li>
+      <li><a href="perfil.html"><i class="fa-solid fa-gear"></i><span>Configurações</span></a></li>
+      <li><a href="/login.html"><i class="fa-solid fa-right-from-bracket"></i><span>Sair</span></a></li>
+    </ul>
+  </nav>
+</aside>
+    <main class="content">
+      <!-- Informações do Perfil -->
+      <section class="profile-info">
+        <h2>Informações do Perfil</h2>
+        <div class="profile-details">
+          <div class="avatar"><i class="fa-solid fa-user"></i></div>
+          <p><strong>Nome:</strong> Juans “Gami” Rodrigues</p>
+          <p><strong>Email:</strong> juans.rodrigues@email.com</p>
+          <p><strong>Data de Cadastro:</strong> 10/06/2023</p>
+          <p><strong>Jogos Comprados:</strong> 12</p>
+          <button class="edit-btn"><i class="fa-solid fa-pen"></i> Editar Perfil</button>
+        </div>
+      </section>
+
+      <!-- Preferências -->
+      <section class="profile-settings">
+        <h2>Preferências</h2>
+        <form id="profile-settings-form">
+          <label><input type="checkbox" checked> Notificações por email</label>
+
+          <label><input type="checkbox" checked> Notificações push</label>
+          <button type="submit"><i class="fa-solid fa-save"></i> Salvar Alterações</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Estatísticas -->
+    <section class="profile-stats">
+      <h2>Suas Estatísticas</h2>
+      <div class="stats-grid">
+        <div class="stat-card blue">
+          <i class="fa-solid fa-gamepad"></i>
+          <h3>12</h3>
+          <p>Jogos Possuídos</p>
+        </div>
+        <div class="stat-card green">
+          <i class="fa-solid fa-clock"></i>
+          <h3>47h</h3>
+          <p>Tempo de Jogo</p>
+        </div>
+        <div class="stat-card purple">
+          <i class="fa-solid fa-trophy"></i>
+          <h3>23</h3>
+          <p>Conquistas</p>
+        </div>
+        <div class="stat-card red">
+          <i class="fa-solid fa-heart"></i>
+          <h3>8</h3>
+          <p>Lista de Desejos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        <strong>TOK-STORY</strong>
+        <p>A sua loja digital de games preferida.</p>
+        <div class="links">
+          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+      <div>
+        <strong>Suporte</strong>
+        <a href="#">Contato</a>
+        <a href="#">Ajuda</a>
+        <a href="#">Termos Legais</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("profile-settings-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Preferências salvas com sucesso!");
+    });
+  </script>
+</body>
+</html>

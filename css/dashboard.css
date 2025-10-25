@@ -130,7 +130,7 @@ header {
 .carousel-container {
   position: relative;
   width: 70%;
-  height: 55vh;
+  height: 65vh;
   overflow: hidden;
   margin: auto;
 }
@@ -180,21 +180,6 @@ header {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
-.banner-button {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.banner-button:hover {
-  background-color: #0056b3;
-}
 
 /* Botões do carrossel */
 .carousel-btn {
@@ -281,36 +266,43 @@ header {
 
 /* Lista de categorias */
 .cards-category {
-  display: none;
-  list-style: none;
+  display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.2rem;
   padding: 1rem 2rem;
   justify-content: center;
-  transition: all 0.3s ease;
-}
-.cards-category.visible {
-  display: flex;
 }
 
 .cardc {
-  background-color: #27272a8a;
-  padding: 1rem 2rem;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px 40px;
+  color: #00eaff;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   cursor: pointer;
-  font-weight: bold;
-  transition: transform 0.3s ease, background 0.3s;
-  white-space: nowrap;
-  border: 1px solid transparent;
-  color: yellow;
+  transition: all 0.3s ease;
+  min-width: 140px;
 }
+
+.cardc i {
+  font-size: 1.8rem;
+}
+
 .cardc:hover,
 .cardc.selected {
-  background: linear-gradient(88deg, rgba(34, 192, 195, 0.533) 0%, rgba(253, 187, 45, 0.538) 100%);
-  transform: translateY(-10px) rotate(-3deg);
-  border-color: yellow;
-  color: yellow;
+  background: rgba(0, 238, 255, 0.08);
+  border: 1px solid #00eaff;
+  box-shadow: 0 0 12px #00eaff55;
+  transform: translateY(-5px);
 }
+
 
 /* =========================================================
    CARD DE JOGO
