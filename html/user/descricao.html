@@ -94,9 +94,24 @@
 </section>
 
   </main>
+  
+  <div id="chatbot-btn" title="Falar com o assistente">
+        <i class="fa-solid fa-robot"></i>
+    </div>
 
+    <div id="chatbot-box" class="hidden" aria-hidden="true">
+        <div class="chat-header">Assistente Tok-Store</div>
+        <div class="chat-body" id="chat-body">
+            <p class="bot">🤖 Olá! Posso ajudar com jogos, compras ou dúvidas!</p>
+        </div>
+        <div class="chat-input">
+            <input id="chat-input" placeholder="Digite sua mensagem..." autocomplete="off" />
+            <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
   <script src="/js/descricao.js"></script>
   <script src="/js/categoria.js"></script>
+  <script src="/js/main.js"></script>
 <!-- Pop-up lateral: feedback de compra -->
 <div id="toast" class="toast hidden">
   <i class="fa-solid fa-cart-plus"></i>

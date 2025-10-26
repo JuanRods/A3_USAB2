@@ -6,6 +6,7 @@
  <title>Tok-Store</title>
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/perfil.css">
+  <link rel="stylesheet" href="/css/chat.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -86,7 +87,20 @@
         </div>
       </div>
     </section>
+  <div id="chatbot-btn" title="Falar com o assistente">
+        <i class="fa-solid fa-robot"></i>
+    </div>
 
+    <div id="chatbot-box" class="hidden" aria-hidden="true">
+        <div class="chat-header">Assistente Tok-Store</div>
+        <div class="chat-body" id="chat-body">
+            <p class="bot">🤖 Olá! Posso ajudar com jogos, compras ou dúvidas!</p>
+        </div>
+        <div class="chat-input">
+            <input id="chat-input" placeholder="Digite sua mensagem..." autocomplete="off" />
+            <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
     <!-- FOOTER -->
     <footer>
       <div>
@@ -106,11 +120,6 @@
     </footer>
   </div>
 
-  <script>
-    document.getElementById("profile-settings-form").addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Preferências salvas com sucesso!");
-    });
-  </script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
