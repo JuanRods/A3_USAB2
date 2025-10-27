@@ -1,8 +1,3 @@
-/* =========================================================
-   TOK-STORY — CSS UNIFICADO (VERSÃO WISHLIST)
-   ========================================================= */
-
-/* ===== Fundo e fontes ===== */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -11,9 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
 .sidebar {
   position: fixed;
   top: 0;
@@ -68,9 +60,6 @@ body {
   transform: translateX(5px);
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
 header {
   position: fixed;
   top: 0;
@@ -124,9 +113,6 @@ header {
   transform: scale(1.1);
 }
 
-/* =========================================================
-   CARROSSEL
-   ========================================================= */
 .carousel-container {
   position: relative;
   width: 70%;
@@ -180,8 +166,6 @@ header {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
-
-/* Botões do carrossel */
 .carousel-btn {
   position: absolute;
   top: 60%;
@@ -230,9 +214,6 @@ header {
   background-color: white;
 }
 
-/* =========================================================
-   LOJA PRINCIPAL / CATEGORIAS
-   ========================================================= */
 .store {
   margin-top: 150px;
   padding: 20px;
@@ -264,7 +245,6 @@ header {
   background-color: #0056b3;
 }
 
-/* Lista de categorias */
 .cards-category {
   display: flex;
   flex-wrap: wrap;
@@ -303,10 +283,6 @@ header {
   transform: translateY(-5px);
 }
 
-
-/* =========================================================
-   CARD DE JOGO
-   ========================================================= */
 .card_buys-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -331,7 +307,6 @@ header {
   }
 }
 
-/* Card */
 .card_buy {
   position: relative;
   width: 260px;
@@ -348,7 +323,6 @@ header {
   box-shadow: 0 0 25px #00bfff55;
 }
 
-/* Imagem */
 .card_buy img {
   width: 100%;
   height: 150px;
@@ -356,7 +330,6 @@ header {
   display: block;
 }
 
-/* Topo do card (estrela + +) */
 .card-top {
   position: absolute;
   top: 8px;
@@ -367,7 +340,6 @@ header {
   align-items: center;
 }
 
-/* Avaliação (estrela e nota) */
 .card-rating {
   display: flex;
   align-items: center;
@@ -382,7 +354,6 @@ header {
   font-size: 0.8rem;
 }
 
-/* Botão "+" (wishlist) */
 .add-wishlist {
   font-size: 1rem;
   color: #00eaff;
@@ -403,7 +374,6 @@ header {
   transform: scale(1.1);
 }
 
-/* Conteúdo */
 .card-info {
   padding: 15px;
 }
@@ -441,11 +411,6 @@ header {
   box-shadow: 0 0 10px #00ccff;
 }
 
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
 footer {
   background: rgba(0, 0, 0, 0.7);
   border-top: 2px solid #00ccff55;
@@ -465,9 +430,6 @@ footer a:hover {
   color: #00eaff;
 }
 
-/* =========================================================
-   ANIMAÇÕES
-   ========================================================= */
 @keyframes fadeInUp {
   from {
     opacity: 0;

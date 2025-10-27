@@ -1,6 +1,3 @@
-/* =========================================================
-   TOK-STORY — PERFIL E CONFIGURAÇÕES
-   ========================================================= */
 
 body {
   margin: 0;
@@ -10,7 +7,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Container */
 .container {
   max-width: 1200px;
   margin: 20px auto 60px;
@@ -21,7 +17,6 @@ body {
 
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -73,14 +68,12 @@ body {
   box-shadow: 0 0 12px #00eaff;
 }
 
-/* Conteúdo principal */
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
-/* Blocos */
 section {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -97,7 +90,6 @@ h2 {
   padding-bottom: 8px;
 }
 
-/* Perfil */
 .profile-details p {
   margin: 6px 0;
   color: #ddd;
@@ -130,7 +122,6 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Form */
 #profile-settings-form {
   display: flex;
   flex-direction: column;
@@ -162,7 +153,6 @@ h2 {
   box-shadow: 0 0 10px #00eaff;
 }
 
-/* Estatísticas */
 .profile-stats {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -198,7 +188,6 @@ h2 {
   box-shadow: 0 0 15px #00ccff55;
 }
 
-/* Cores */
 .stat-card.blue {
   background: rgba(0, 204, 255, 0.08);
   border: 1px solid #00ccff44;
@@ -220,7 +209,6 @@ h2 {
   color: #ff6666;
 }
 
-/* Footer */
 footer {
   background: rgba(0, 0, 0, 0.7);
   border-top: 2px solid #00ccff55;
@@ -246,7 +234,6 @@ footer p {
   color: #bbb;
 }
 
-/* Responsividade */
 @media (max-width: 900px) {
   .content {
     grid-template-columns: 1fr;

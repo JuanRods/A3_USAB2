@@ -1,6 +1,4 @@
-/* =========================================================
-   TOK-STORY — PÁGINA EXPLORAR
-   ========================================================= */
+
 
 body {
   margin: 0;
@@ -10,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Container */
+
 .container {
   max-width: 1200px;
   margin: 20px auto 60px;
@@ -20,7 +18,7 @@ body {
   gap: 30px;
 }
 
-/* Header */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -65,9 +63,7 @@ body {
   box-shadow: 0 0 12px #00eaff;
 }
 
-/* =========================================================
-   HERO BANNER
-   ========================================================= */
+
 .hero-banner {
   position: relative;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url("img/banner.jpg") center/cover no-repeat;
@@ -107,9 +103,6 @@ body {
   box-shadow: 0 0 12px #00eaff;
 }
 
-/* =========================================================
-   RECOMENDAÇÕES
-   ========================================================= */
 .recommendations h2 {
   font-size: 1.5rem;
   color: #00eaff;
@@ -151,9 +144,6 @@ body {
   margin-top: 5px;
 }
 
-/* =========================================================
-   CATEGORIAS
-   ========================================================= */
 .categories h2 {
   font-size: 1.5rem;
   color: #00eaff;
@@ -186,7 +176,6 @@ body {
   box-shadow: 0 0 15px #00ccff55;
 }
 
-/* Footer */
 footer {
   background: rgba(0, 0, 0, 0.7);
   border-top: 2px solid #00ccff55;
@@ -212,9 +201,6 @@ footer p {
   color: #bbb;
 }
 
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
 @media (max-width: 900px) {
   .game-card {
     flex: 1 1 calc(50% - 20px);

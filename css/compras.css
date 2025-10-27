@@ -1,6 +1,4 @@
-/* =========================================================
-   TOK-STORY — COMPRAS (TEMA CLARO ADMIN)
-   ========================================================= */
+
 
 body {
   margin: 0;
@@ -9,7 +7,7 @@ body {
   color: #111827;
 }
 
-/* ===== Título ===== */
+
 .header h1 {
   font-size: 1.6rem;
   font-weight: 700;
@@ -17,7 +15,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* ===== Tabela de Compras ===== */
+
 .table-section {
   margin-top: 40px;
 }
@@ -56,13 +54,13 @@ body {
   color: #334155;
 }
 
-/* ===== Efeito de Hover ===== */
+
 .compras-table tr:hover {
   background: #f8fafc;
   transition: background 0.3s ease;
 }
 
-/* ===== Responsividade ===== */
+
 @media (max-width: 768px) {
   .compras-table th,
   .compras-table td {

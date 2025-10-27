@@ -1,7 +1,4 @@
 
-
-/* ===== Cards dos jogos (lista de compras) ===== */
-/* ===== Card de jogo ===== */
 .card_buy-container{
   display: flex;
 }
@@ -23,7 +20,6 @@
   box-shadow: 0 0 25px #00bfff55;
 }
 
-/* ===== Imagem ===== */
 .card_buy img {
   width: 100%;
   height: 140px;
@@ -32,7 +28,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ===== Cabeçalho do topo (estrela + +) ===== */
 .card-top {
   position: absolute;
   top: 10px;
@@ -43,7 +38,6 @@
   align-items: center;
 }
 
-/* Avaliação */
 .card-rating {
   display: flex;
   align-items: center;
@@ -58,7 +52,6 @@
   font-size: 0.8rem;
 }
 
-/* Botão "+" (favoritar) */
 .add-fav {
   font-size: 1rem;
   color: #00eaff;
@@ -79,7 +72,7 @@
   transform: scale(1.1);
 }
 
-/* Tooltip do botão */
+
 .add-fav::after {
   content: "Adicionar à lista de desejos";
   position: absolute;
@@ -101,7 +94,7 @@
   transform: translateY(0);
 }
 
-/* ===== Conteúdo ===== */
+
 .card-info {
   padding: 15px;
   display: flex;
@@ -131,7 +124,7 @@
   font-size: 1rem;
 }
 
-/* Botão de comprar */
+
 .buy-btn {
   background: #00ccff;
   border: none;

@@ -5,8 +5,8 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    color: #e0e7ff; /* azul claro */
-    background-color: #0f172a; /* azul escuro */
+    color: #e0e7ff; 
+    background-color: #0f172a; 
 }
 
 .container {
@@ -62,22 +62,22 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 10px 10px 12px; /* padding-left para espaçar o ícone */
+    padding: 10px 10px 10px 12px; 
     color: #cfd8dc;
     text-decoration: none;
     font-size: 14px;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 6px;
     white-space: nowrap;
-    width: 100%; /* largura fixa para quando a sidebar estiver aberta */
+    width: 100%; 
 }
 
 .sidebar nav ul li a i {
     flex-shrink: 0;
     font-size: 18px;
     width: 24px;
-    margin-left: 0; /* remove margem que escondia o ícone */
-    visibility: visible; /* ícones sempre visíveis */
+    margin-left: 0;
+    visibility: visible; 
     text-align: center;
 }
 
@@ -124,7 +124,7 @@ nav {
 
 nav button {
     text-decoration: none;
-    color: #bfdbfe; /* azul claro */
+    color: #bfdbfe; 
     font-size: 1rem;
     font-weight: 500;
     padding: 20px;
@@ -134,7 +134,7 @@ nav button {
 }
 
 nav button:hover {
-    background-color: #2563eb; /* azul escuro */
+    background-color: #2563eb; 
     border-color: #2563eb;
     transform: translateY(-3px);
 }
@@ -144,7 +144,7 @@ nav #person {
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    border: 2px solid #93c5fd; /* azul claro */
+    border: 2px solid #93c5fd; 
 }
 
 .cards {
@@ -162,7 +162,7 @@ nav #person {
 }
 
 .cardc {
-    background-color: #334155cc; /* azul acinzentado */
+    background-color: #334155cc; 
     padding: 1rem 2rem;
     border-radius: 8px;
     cursor: pointer;
@@ -170,7 +170,7 @@ nav #person {
     transition: transform 0.3s ease;
     white-space: nowrap;
     border: 1px solid transparent;
-    color: #93c5fd; /* azul claro */
+    color: #93c5fd; 
 }
 
 .cardc:hover {
@@ -186,7 +186,7 @@ nav #person {
 }
 
 .card {
-    background-color: #1e293b; /* azul escuro */
+    background-color: #1e293b; 
     width: 12rem;
     height: 16rem;
     display: flex;
@@ -210,12 +210,12 @@ nav #person {
     padding: 1rem;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
-    color: #cbd5e1; /* azul claro */
+    color: #cbd5e1; 
 }
 
 .checkout {
     padding: 1rem 2rem;
-    background-color: #2563eb; /* azul vibrante */
+    background-color: #2563eb; 
     color: white;
     border: none;
     border-radius: 0.5rem;
@@ -225,7 +225,7 @@ nav #person {
 }
 
 .checkout:hover {
-    background-color: #1e40af; /* azul mais escuro */
+    background-color: #1e40af; 
 }
 
 .footer {

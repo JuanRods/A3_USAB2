@@ -7,6 +7,7 @@ const notasCanvas = document.getElementById('chartNotas');
 Chart.defaults.font.family = 'Poppins';
 Chart.defaults.font.size = 12;
 
+// 1️⃣ Jogos mais vendidos
 new Chart(vendasCanvas, {
   type: 'bar',
   data: {
@@ -29,6 +30,7 @@ new Chart(vendasCanvas, {
   }
 });
 
+// 2️⃣ Ranking por categoria
 new Chart(categoriaCanvas, {
   type: 'pie',
   data: {
@@ -48,6 +50,7 @@ new Chart(categoriaCanvas, {
   }
 });
 
+// 3️⃣ Vendas por empresa
 new Chart(empresaCanvas, {
   type: 'bar',
   data: {
@@ -70,6 +73,7 @@ new Chart(empresaCanvas, {
   }
 });
 
+// 4️⃣ Evolução de vendas mensais
 new Chart(evolucaoCanvas, {
   type: 'line',
   data: {
@@ -95,6 +99,7 @@ new Chart(evolucaoCanvas, {
   }
 });
 
+// 5️⃣ Avaliações médias por jogo
 new Chart(notasCanvas, {
   type: 'radar',
   data: {

@@ -448,7 +448,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const categoriasUnicas = ["Todos", ...new Set(jogos.map(j => j.categoria))];
 
-  // Ícones por categoria (NOVO)
   const iconesPorCategoria = {
     "Ação": "fa-gun",
     "RPG": "fa-hat-wizard",
@@ -466,7 +465,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const listaCategorias = document.getElementById("category-list");
   listaCategorias.innerHTML = "";
 
-  // Renderização das categorias com ícones (NOVO)
   categoriasUnicas.forEach(cat => {
     const li = document.createElement("li");
     li.classList.add("cardc");
@@ -483,7 +481,6 @@ document.addEventListener("DOMContentLoaded", () => {
     listaCategorias.appendChild(li);
   });
 
-  // Cria cada card de jogo
   function criarCard(jogo, index) {
     const card = document.createElement("div");
     card.className = "card_buy";
@@ -539,7 +536,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   }
 
-  // Renderiza os jogos
   function renderizarJogos(lista) {
     containerCards.innerHTML = "";
     lista.forEach((jogo, index) => {
@@ -579,19 +575,16 @@ document.addEventListener("DOMContentLoaded", () => {
     alert(`${jogo.nome} foi ${index === -1 ? "adicionado à" : "removido da"} wishlist.`);
   }
 
-  // Filtra os jogos pela categoria
   function filtrarPorCategoria(categoria) {
     if (categoria === "Todos") return jogos;
     return jogos.filter(j => j.categoria === categoria);
   }
 
-  // Filtra os jogos pelo texto da busca
   function filtrarPorTexto(texto) {
     const termo = texto.toLowerCase();
     return jogos.filter(jogo => jogo.nome.toLowerCase().includes(termo));
   }
 
-  // Aplica filtros combinados
   let categoriaSelecionada = "Todos";
 
   function aplicarFiltros() {

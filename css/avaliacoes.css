@@ -1,6 +1,3 @@
-/* =========================================================
-   TOK-STORY — AVALIAÇÕES (TEMA CLARO ADMIN)
-   ========================================================= */
 
 body {
   margin: 0;
@@ -9,7 +6,6 @@ body {
   color: #111827;
 }
 
-/* ===== Formulário ===== */
 .form-section {
   margin-top: 30px;
   background: #ffffff;
@@ -66,7 +62,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===== Tabela ===== */
 .table-section {
   margin-top: 40px;
 }
@@ -106,13 +101,11 @@ body {
   vertical-align: top;
 }
 
-/* ===== Efeito hover ===== */
 .avaliacoes-table tr:hover {
   background: #f8fafc;
   transition: background 0.3s ease;
 }
 
-/* ===== Responsividade ===== */
 @media (max-width: 900px) {
   .form-section form {
     flex-direction: column;

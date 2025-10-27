@@ -1,4 +1,4 @@
-
+// Contas padrão (persistem no localStorage)
 let users = JSON.parse(localStorage.getItem("users")) || [
   { email: "user@gmail.com", password: "1234", role: "user" },
   { email: "admin@gmail.com", password: "1234", role: "admin" },
@@ -35,9 +35,6 @@ function login() {
   }
 }
 
-
-
-
 function register() {
   const email = document.getElementById("register-email").value.trim();
   const password = document.getElementById("register-password").value.trim();
@@ -56,8 +53,6 @@ function register() {
   showForm("login-form");
 }
 
-
-
 function forgotPassword() {
   const email = document.getElementById("forgot-email").value.trim();
 
@@ -72,15 +67,10 @@ function forgotPassword() {
   showForm("login-form");
 }
 
-
-
 function logout() {
   localStorage.removeItem("loggedUser");
   window.location.href = "/index.html";
 }
-
-
-
 
 const logged = JSON.parse(localStorage.getItem("loggedUser"));
 const path = window.location.pathname;

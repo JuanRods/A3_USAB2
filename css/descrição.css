@@ -1,6 +1,4 @@
-/* ===== Layout estilo Steam ===== */
 
-/* Base geral */
 body {
   margin: 0;
   padding: 0;
@@ -10,7 +8,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Header */
 header {
   background: linear-gradient(180deg, #171a21 0%, #0e141b 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -32,7 +29,6 @@ header {
   letter-spacing: 2px;
 }
 
-/* Botões e busca no header */
 .search-container {
   display: flex;
   align-items: center;
@@ -76,7 +72,6 @@ header nav button:hover {
   transform: translateY(-2px);
 }
 
-/* ===== Sidebar ===== */
 .sidebar {
   position: fixed;
   top: 0;
@@ -121,7 +116,6 @@ header nav button:hover {
   transform: translateX(5px);
 }
 
-/* ===== Conteúdo principal ===== */
 main.game-container {
   margin-top: 120px;
   padding: 40px;
@@ -136,7 +130,6 @@ main.game-container {
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* Banner principal */
 #game-banner {
   width: 100%;
   height: auto;
@@ -146,7 +139,7 @@ main.game-container {
   border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Miniaturas */
+
 .thumbnail-row {
   display: flex;
   gap: 10px;
@@ -168,7 +161,6 @@ main.game-container {
   border-color: #66c0f4;
 }
 
-/* Detalhes do jogo */
 .game-details {
   background: linear-gradient(160deg, rgba(15,20,30,0.9), rgba(10,15,25,0.9));
   border-radius: 10px;
@@ -219,7 +211,6 @@ main.game-container {
   transform: translateY(-2px);
 }
 
-/* ===== Área de avaliações ===== */
 .rating-section {
   margin-top: 60px;
   background: rgba(20, 30, 45, 0.9);
@@ -301,7 +292,7 @@ main.game-container {
   border-left: 3px solid #66c0f4;
 }
 
-/* ===== Scroll suave ===== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }

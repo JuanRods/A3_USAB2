@@ -1,8 +1,4 @@
-/* =========================================================
-   TOK-STORY — CARRINHO DE COMPRAS (AJUSTADO)
-   ========================================================= */
 
-/* ===== Reset & Base ===== */
 body {
   margin: 0;
   font-family: "Poppins", "Motiva Sans", sans-serif;
@@ -11,22 +7,16 @@ body {
   overflow-x: hidden;
 }
 
-/* =========================================================
-   CONTAINER PRINCIPAL
-   ========================================================= */
 .cart-page {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  padding: 60px 5% 80px; /* reduzido para remover scroll extra */
-  min-height: calc(100vh - 100px); /* ajusta à tela */
+  padding: 60px 5% 80px; 
+  min-height: calc(100vh - 100px); 
   box-sizing: border-box;
 }
 
-/* =========================================================
-   LISTA DE ITENS — COLUNA ESQUERDA
-   ========================================================= */
 .cart-items {
   flex: 2;
   background: #ffffff;
@@ -51,9 +41,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* =========================================================
-   ITEM DO CARRINHO
-   ========================================================= */
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -71,7 +58,6 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Parte esquerda: imagem + texto */
 .cart-left {
   display: flex;
   align-items: center;
@@ -105,7 +91,6 @@ body {
   margin-top: 4px;
 }
 
-/* Parte direita: quantidade e excluir */
 .cart-right {
   display: flex;
   align-items: center;
@@ -139,7 +124,6 @@ body {
   text-align: center;
 }
 
-/* Ícone remover */
 .remove-item {
   font-size: 1.2rem;
   color: #dc2626;
@@ -155,16 +139,12 @@ body {
   transform: scale(1.15);
 }
 
-/* Estado ao remover */
 .cart-item.removing {
   background: rgba(220, 38, 38, 0.08);
   opacity: 0.7;
   transition: all 0.5s ease;
 }
 
-/* =========================================================
-   COLUNA DIREITA — RESUMO DO PEDIDO
-   ========================================================= */
 .cart-summary {
   flex: 1;
   background: #fff;
@@ -199,9 +179,6 @@ body {
   padding-top: 15px;
 }
 
-/* =========================================================
-   BOTÃO FINALIZAR
-   ========================================================= */
 .checkout {
   width: 100%;
   background: #2563eb;
@@ -229,9 +206,6 @@ body {
   margin-top: 10px;
 }
 
-/* =========================================================
-   MENSAGEM DE CARRINHO VAZIO
-   ========================================================= */
 .cart-empty {
   text-align: center;
   font-size: 1.1rem;
@@ -239,9 +213,6 @@ body {
   padding: 40px 0;
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
 @media (max-width: 960px) {
   .cart-page {
     flex-direction: column;

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/css/descrição.css">
   <link rel="stylesheet" href="/css/dashboard.css">
   <link rel="stylesheet" href="/css/manipulate.css">
+  <link rel="stylesheet" href="/css/chat.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
@@ -30,7 +31,6 @@
     </section>
   </header>
 
-  <!-- Sidebar Vertical -->
   <aside class="sidebar">
   <div class="sidebar-top">
     <img src="/img/chaos-icon.jpg" alt="Logo" class="logo-icon" />
@@ -66,16 +66,13 @@
       </div>
     </section>
 
-    <!-- 📊 ÁREA DE AVALIAÇÃO DE JOGOS -->
    <section class="rating-section">
   <h2>Avalie este jogo</h2>
 
-  <!-- Média de avaliação -->
   <div class="average-rating" id="average-rating">
     ⭐ <span id="avg-value">0.0</span> de 5 — <span id="total-reviews">0</span> avaliações
   </div>
 
-  <!-- Estrelas invertidas -->
   <div class="star-rating" id="star-rating">
     <i class="fa-solid fa-star" data-value="5"></i>
     <i class="fa-solid fa-star" data-value="4"></i>
@@ -94,7 +91,7 @@
 </section>
 
   </main>
-  
+
   <div id="chatbot-btn" title="Falar com o assistente">
         <i class="fa-solid fa-robot"></i>
     </div>
@@ -112,13 +109,11 @@
   <script src="/js/descricao.js"></script>
   <script src="/js/categoria.js"></script>
   <script src="/js/main.js"></script>
-<!-- Pop-up lateral: feedback de compra -->
 <div id="toast" class="toast hidden">
   <i class="fa-solid fa-cart-plus"></i>
   <span>Jogo adicionado ao carrinho!</span>
 </div>
 
-<!-- Alternador de tema -->
 <div id="theme-toggle" title="Alternar modo claro/escuro">
   <i class="fa-solid fa-moon"></i>
 </div>

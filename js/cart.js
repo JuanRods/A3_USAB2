@@ -1,5 +1,5 @@
 
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   const container = document.getElementById("cart-items");
   const totalSpan = document.getElementById("cart-total");
@@ -448,17 +448,14 @@
       ]
     }
   ];
-  // Garantir que descricao.js esteja carregado
+ 
 
-
-  // Se o carrinho estiver vazio
   if (carrinho.length === 0) {
     container.innerHTML = "<p class='cart-empty'>Seu carrinho está vazio.</p>";
     checkoutBtn.style.display = "none";
     return;
   }
 
-  // Adiciona propriedade quantidade se não existir
   carrinho.forEach(item => {
     if (!item.quantidade) item.quantidade = 1;
   });
@@ -473,7 +470,7 @@
 
   atualizarTotal();
 
-  // Monta os cards do carrinho
+
   carrinho.forEach((item, index) => {
     const jogo = jogos.find(j => j.nome === item.nome || j.index === item.index);
     const imgSrc = jogo?.imagens?.[0] || item.imagem || "img/placeholder.jpg"; // 👈 pega a 1ª imagem do array
@@ -497,8 +494,6 @@
       </div>
     `;
     container.appendChild(div);
-
-    // Clique na imagem → descrição
     div.querySelector(".cart-img").addEventListener("click", () => {
       if (jogo) {
         localStorage.setItem("jogoSelecionado", jogo.index);
@@ -508,7 +503,6 @@
     });
   });
 
-  // Aumentar/diminuir quantidade
   container.addEventListener("click", (e) => {
     const index = e.target.dataset.index;
     if (e.target.classList.contains("plus")) {
@@ -530,7 +524,6 @@
     location.reload();
   });
 
-  // Finalizar compra
   checkoutBtn.addEventListener("click", () => {
     if (carrinho.length === 0) {
       alert("Seu carrinho está vazio!");

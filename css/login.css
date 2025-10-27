@@ -1,6 +1,4 @@
-/* =================================
-   Estilos Globais e Reset
-   ================================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,9 +6,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* =================================
-   Corpo da Página (Body)
-   ================================= */
+
 body {
   display: flex;
   flex-direction: column;
@@ -19,9 +15,6 @@ body {
   color: #f0f0f0;
 }
 
-/* =================================
-   Cabeçalho
-   ================================= */
 header {
   display: flex;
   align-items: center;
@@ -54,9 +47,6 @@ header .back-btn:hover {
   border-color: #007bff;
 }
 
-/* =================================
-   Conteúdo Principal
-   ================================= */
 main {
   flex: 1;
   display: flex;
@@ -65,9 +55,6 @@ main {
   padding: 20px;
 }
 
-/* =================================
-   Container do Login/Registro/Recuperação
-   ================================= */
 .login-container {
   width: 100%;
   max-width: 450px;
@@ -82,7 +69,6 @@ main {
               0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
-/* Imagem */
 .login-container img {
   width: 80px;
   height: 80px;
@@ -91,9 +77,6 @@ main {
   object-fit: cover;
 }
 
-/* =================================
-   Formulários Dinâmicos
-   ================================= */
 .form {
   display: none;
   width: 100%;
@@ -109,7 +92,6 @@ main {
   transform: translateY(0);
 }
 
-/* Título */
 .form h2 {
   margin-bottom: 25px;
   color: #fff;
@@ -118,7 +100,6 @@ main {
   letter-spacing: 0.5px;
 }
 
-/* Inputs */
 .form input[type="email"],
 .form input[type="password"] {
   width: 80%;
@@ -138,7 +119,6 @@ main {
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
-/* Botão principal */
 button.login-btn {
   width: 80%;
   padding: 12px;
@@ -158,7 +138,6 @@ button.login-btn:hover {
   background-color: #0056b3;
 }
 
-/* Links */
 .links {
   width: 80%;
   text-align: center;
@@ -180,9 +159,6 @@ button.login-btn:hover {
   color: #4da6ff;
 }
 
-/* =================================
-   Rodapé
-   ================================= */
 footer {
   background-color: #111;
   color: #fff;

@@ -1,0 +1,115 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  const container = document.getElementById("cart-items");
+  const totalSpan = document.getElementById("cart-total");
+  const subtotalSpan = document.getElementById("subtotal");
+  const checkoutBtn = document.querySelector(".checkout");
+
+  const jogos = [
+    {
+      index: 0,
+      nome: "The Witcher 3: Wild Hunt",
+      ano: 2015,
+      preco: 59.99,
+      descricao: "Um RPG de mundo aberto aclamado pela crítica, cheio de missões e decisões que importam.",
+      dev: "CD Projekt Red",
+      categoria: "RPG",
+      imagens: [
+        "/img/the-witcher-3.jpg",
+        "/img/the-witcher-3-1.jpg",
+        "/img/the-witcher-3-2.jpg",
+        "/img/the-witcher-3-3.jpg"
+      ],
+      avaliacoes: [
+        "Um dos mundos mais vivos e bem construídos dos games.",
+        "História envolvente e personagens memoráveis.",
+        "Cada missão é uma pequena obra-prima narrativa."
+      ]
+    }
+  ];
+
+   if (carrinho.length === 0) {
+    container.innerHTML = "<p class='cart-empty'>Seu carrinho está vazio.</p>";
+    checkoutBtn.style.display = "none";
+    return;
+  }
+
+  carrinho.forEach(item => {
+    if (!item.quantidade) item.quantidade = 1;
+  });
+
+  let total = 0;
+
+  const atualizarTotal = () => {
+    total = carrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+    totalSpan.textContent = `R$ ${total.toFixed(2)}`;
+    subtotalSpan.textContent = `R$ ${total.toFixed(2)}`;
+  };
+
+  atualizarTotal();
+
+  carrinho.forEach((item, index) => {
+    const jogo = jogos.find(j => j.nome === item.nome || j.index === item.index);
+    const imgSrc = jogo?.imagens?.[0] || item.imagem || "img/placeholder.jpg";
+
+    const div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerHTML = `
+      <div class="cart-left">
+        <img src="${imgSrc}" alt="${item.nome}" class="cart-img">
+        <div class="cart-details">
+          <h3>${item.nome}</h3>
+          <p class="cart-price">R$ ${item.preco.toFixed(2)}</p>
+        </div>
+      </div>
+
+      <div class="cart-right">
+        <button class="qty-btn minus" data-index="${index}">−</button>
+        <span class="qty">${item.quantidade}</span>
+        <button class="qty-btn plus" data-index="${index}">+</button>
+        <i class="fa-solid fa-trash remove-item" data-index="${index}" title="Remover"></i>
+      </div>
+    `;
+    container.appendChild(div);
+
+    div.querySelector(".cart-img").addEventListener("click", () => {
+      if (jogo) {
+        localStorage.setItem("jogoSelecionado", jogo.index);
+        window.location.href = `descricao.html?index=${jogo.index}`;
+
+      }
+    });
+  });
+
+  container.addEventListener("click", (e) => {
+    const index = e.target.dataset.index;
+    if (e.target.classList.contains("plus")) {
+      carrinho[index].quantidade++;
+    } else if (e.target.classList.contains("minus")) {
+      carrinho[index].quantidade = Math.max(1, carrinho[index].quantidade - 1);
+    } else if (e.target.classList.contains("remove-item")) {
+      const itemEl = e.target.closest(".cart-item");
+      itemEl.classList.add("removing");
+      setTimeout(() => {
+        carrinho.splice(index, 1);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        location.reload();
+      }, 400);
+      return;
+    } else return;
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    location.reload();
+  });
+
+  checkoutBtn.addEventListener("click", () => {
+    if (carrinho.length === 0) {
+      alert("Seu carrinho está vazio!");
+      return;
+    }
+
+    alert(`Compra finalizada com sucesso!\nTotal: ${totalSpan.textContent}`);
+    localStorage.removeItem("carrinho");
+    window.location.href = "dashboard.html";
+  });
+});

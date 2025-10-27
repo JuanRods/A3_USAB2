@@ -442,7 +442,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-   // ====== CAPTURA DO JOGO ATUAL ======
   const urlParams = new URLSearchParams(window.location.search);
   const index = parseInt(urlParams.get("index"));
   const jogo = jogos[index];
@@ -452,7 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // ====== EXIBE INFORMAÇÕES PRINCIPAIS ======
+  
   const banner = document.getElementById("game-banner");
   const title = document.getElementById("game-title");
   const desc = document.getElementById("game-description");
@@ -469,7 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
   year.textContent = jogo.ano;
   price.textContent = jogo.preco.toFixed(2);
 
-  // ====== MINIATURAS ======
+  
   const thumbs = document.getElementById("thumbnails");
   thumbs.innerHTML = "";
   jogo.imagens.forEach((imgSrc, i) => {
@@ -486,7 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
     thumbs.appendChild(thumb);
   });
 
-  // ====== FUNÇÃO TOAST ======
+  
   function mostrarToast(msg) {
     const toast = document.getElementById("toast");
     toast.querySelector("span").textContent = msg;
@@ -494,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => toast.classList.add("hidden"), 2500);
   }
 
-  // ====== BOTÃO COMPRAR ======
+  
   document.querySelector(".buy-btn").addEventListener("click", () => {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     carrinho.push(jogo);
@@ -502,7 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarToast("Jogo adicionado ao carrinho!");
   });
 
-  // ====== BOTÃO FAVORITAR ======
+  
   document.querySelector(".fav-btn").addEventListener("click", () => {
     const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
     if (!loggedUser) {
@@ -525,7 +524,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("wishlist atualizados!");
   });
 
-  // ====== SISTEMA DE AVALIAÇÕES ======
+  
   const stars = document.querySelectorAll('.star-rating i');
   const avgValue = document.getElementById('avg-value');
   const totalReviews = document.getElementById('total-reviews');
@@ -533,15 +532,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById('submit-review');
   let rating = 0;
 
-  // Identificador único por jogo
+  
   const storageKey = `ratingsData_${jogo.index}`;
   let ratingsData = JSON.parse(localStorage.getItem(storageKey)) || [];
 
-  // Exibir avaliações salvas
+
   atualizarLista();
   atualizarMedia();
 
-  // Clique nas estrelas
+ 
   stars.forEach(star => {
     star.addEventListener('click', () => {
       rating = parseInt(star.dataset.value);
@@ -550,7 +549,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Hover das estrelas
   stars.forEach(star => {
     star.addEventListener('mouseenter', () => {
       const hoverValue = parseInt(star.dataset.value);
@@ -561,7 +559,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Enviar avaliação
+
   submitBtn.addEventListener('click', () => {
     const text = document.getElementById('review-text').value.trim();
     if (rating === 0 || text === "") {
@@ -580,7 +578,7 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizarMedia();
   });
 
-  // Atualiza média e total
+
   function atualizarMedia() {
     if (ratingsData.length === 0) {
       avgValue.textContent = '0.0';
@@ -593,7 +591,7 @@ document.addEventListener("DOMContentLoaded", () => {
     totalReviews.textContent = ratingsData.length;
   }
 
-  // Exibe lista de comentários
+
   function atualizarLista() {
     reviewsList.innerHTML = "";
     ratingsData.slice().reverse().forEach(r => {

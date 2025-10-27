@@ -1,0 +1,171 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const jogos = [
+    {
+      index: 0,
+      nome: "The Witcher 3: Wild Hunt",
+      ano: 2015,
+      preco: 59.99,
+      descricao: "Um RPG de mundo aberto aclamado pela crítica, cheio de missões e decisões que importam.",
+      dev: "CD Projekt Red",
+      categoria: "RPG",
+      imagens: [
+        "/img/the-witcher-3.jpg",
+        "/img/the-witcher-3-1.jpg",
+        "/img/the-witcher-3-2.jpg",
+        "/img/the-witcher-3-3.jpg"
+      ],
+      avaliacoes: [
+        "Um dos mundos mais vivos e bem construídos dos games.",
+        "História envolvente e personagens memoráveis.",
+        "Cada missão é uma pequena obra-prima narrativa."
+      ]
+    }
+  ];
+
+   const urlParams = new URLSearchParams(window.location.search);
+  const index = parseInt(urlParams.get("index"));
+  const jogo = jogos[index];
+
+  if (!jogo) {
+    document.body.innerHTML = "<h1>Jogo não encontrado.</h1>";
+    return;
+  }
+
+  const banner = document.getElementById("game-banner");
+  const title = document.getElementById("game-title");
+  const desc = document.getElementById("game-description");
+  const dev = document.getElementById("game-dev");
+  const cat = document.getElementById("game-cat");
+  const year = document.getElementById("game-year");
+  const price = document.getElementById("game-price");
+
+  banner.src = jogo.imagens[0] || "/img/placeholder.jpg";
+  title.textContent = jogo.nome;
+  desc.textContent = jogo.descricao;
+  dev.textContent = jogo.dev;
+  cat.textContent = jogo.categoria;
+  year.textContent = jogo.ano;
+  price.textContent = jogo.preco.toFixed(2);
+
+  const thumbs = document.getElementById("thumbnails");
+  thumbs.innerHTML = "";
+  jogo.imagens.forEach((imgSrc, i) => {
+    const thumb = document.createElement("img");
+    thumb.src = imgSrc;
+    thumb.alt = `${jogo.nome} imagem ${i + 1}`;
+    thumb.classList.add("thumb");
+    if (i === 0) thumb.classList.add("active");
+    thumb.addEventListener("click", () => {
+      banner.src = imgSrc;
+      document.querySelectorAll("#thumbnails img").forEach(t => t.classList.remove("active"));
+      thumb.classList.add("active");
+    });
+    thumbs.appendChild(thumb);
+  });
+
+  function mostrarToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.querySelector("span").textContent = msg;
+    toast.classList.remove("hidden");
+    setTimeout(() => toast.classList.add("hidden"), 2500);
+  }
+
+  document.querySelector(".buy-btn").addEventListener("click", () => {
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    carrinho.push(jogo);
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    mostrarToast("Jogo adicionado ao carrinho!");
+  });
+
+  document.querySelector(".fav-btn").addEventListener("click", () => {
+    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    if (!loggedUser) {
+      alert("Faça login para favoritar.");
+      return;
+    }
+    const allFavorites = JSON.parse(localStorage.getItem("wishlistPorUsuario")) || {};
+    const userFavorites = allFavorites[loggedUser.email] || [];
+
+    const exists = userFavorites.find(j => j.nome === jogo.nome);
+    if (!exists) {
+      userFavorites.push({ nome: jogo.nome, preco: jogo.preco });
+    } else {
+      const idx = userFavorites.findIndex(j => j.nome === jogo.nome);
+      userFavorites.splice(idx, 1);
+    }
+
+    allFavorites[loggedUser.email] = userFavorites;
+    localStorage.setItem("wishlistPorUsuario", JSON.stringify(allFavorites));
+    alert("wishlist atualizados!");
+  });
+
+  const stars = document.querySelectorAll('.star-rating i');
+  const avgValue = document.getElementById('avg-value');
+  const totalReviews = document.getElementById('total-reviews');
+  const reviewsList = document.getElementById('reviews');
+  const submitBtn = document.getElementById('submit-review');
+  let rating = 0;
+
+  const storageKey = `ratingsData_${jogo.index}`;
+  let ratingsData = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+  atualizarLista();
+  atualizarMedia();
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      rating = parseInt(star.dataset.value);
+      stars.forEach(s => s.classList.remove('active'));
+      for (let i = 0; i < rating; i++) stars[i].classList.add('active');
+    });
+  });
+
+  stars.forEach(star => {
+    star.addEventListener('mouseenter', () => {
+      const hoverValue = parseInt(star.dataset.value);
+      stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= hoverValue));
+    });
+    star.addEventListener('mouseleave', () => {
+      stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= rating));
+    });
+  });
+
+  submitBtn.addEventListener('click', () => {
+    const text = document.getElementById('review-text').value.trim();
+    if (rating === 0 || text === "") {
+      alert("Por favor, selecione uma nota e escreva um comentário.");
+      return;
+    }
+
+    ratingsData.push({ rating, text });
+    localStorage.setItem(storageKey, JSON.stringify(ratingsData));
+
+    document.getElementById('review-text').value = "";
+    stars.forEach(s => s.classList.remove('active'));
+    rating = 0;
+
+    atualizarLista();
+    atualizarMedia();
+  });
+
+  function atualizarMedia() {
+    if (ratingsData.length === 0) {
+      avgValue.textContent = '0.0';
+      totalReviews.textContent = '0';
+      return;
+    }
+    const soma = ratingsData.reduce((acc, val) => acc + val.rating, 0);
+    const media = soma / ratingsData.length;
+    avgValue.textContent = media.toFixed(1);
+    totalReviews.textContent = ratingsData.length;
+  }
+
+  function atualizarLista() {
+    reviewsList.innerHTML = "";
+    ratingsData.slice().reverse().forEach(r => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${'⭐'.repeat(r.rating)}</strong> — ${r.text}`;
+      reviewsList.appendChild(li);
+    });
+  }
+});

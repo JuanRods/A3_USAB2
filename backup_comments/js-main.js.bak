@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector('header');
   window.addEventListener('scroll', () => {
@@ -114,4 +113,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
-
