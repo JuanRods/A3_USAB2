@@ -1,117 +1,407 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if (!header) return;
-    header.classList.toggle("scrolled", window.scrollY > 0);
-  });
+  const chatbotBtn = document.getElementById("chatbot-btn");
+  const chatbotBox = document.getElementById("chatbot-box");
+  const chatBody = document.getElementById("chat-body");
+  const chatInput = document.getElementById("chat-input");
+  const sendBtn = document.getElementById("send-btn");
 
-  const searchBtn = document.getElementById('search-btn');
-  const searchInput = document.getElementById('busca');
-  if (searchBtn && searchInput) {
-    searchBtn.addEventListener('click', () => {
-      const ev = new Event('input', { bubbles: true });
-      searchInput.dispatchEvent(ev);
-      searchInput.focus();
-    });
+  // Checagem básica
+  if (!chatbotBtn || !chatbotBox || !chatBody || !chatInput || !sendBtn) {
+    console.error("⚠ Algum elemento do chatbot não foi encontrado.");
+    return;
   }
 
-  const toggleGenres = document.getElementById('toggle-genres');
-  const categoryList = document.getElementById('category-list');
-  toggleGenres?.addEventListener('click', () => {
-    if (!categoryList) return;
-    const isHidden = getComputedStyle(categoryList).display === 'none';
-    categoryList.style.display = isHidden ? 'flex' : 'none';
+  // Abre/fecha o chatbot
+  chatbotBtn.addEventListener("click", () => {
+    chatbotBox.classList.toggle("hidden");
+    const isHidden = chatbotBox.classList.contains("hidden");
+    chatbotBox.setAttribute("aria-hidden", isHidden);
   });
 
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  const slide = document.querySelector('.carousel-slide');
-  const items = document.querySelectorAll('.carousel-item');
-  const dotsContainer = document.querySelector('.nav-dots');
+  // ================================
+  //  ÁRVORE DE DECISÃO (FRONT)
+  //  Ordem dos filtros:
+  //  start → genero/humor → plataforma → ano → nota → faixa → tags → confirmação → buscar
+  // ================================
+  let filtros = {};
+  let caminho = [];
+  let estadoAtual = "start";
 
-  if (slide && items.length) {
-    let currentIndex = 0;
-    const total = items.length;
+  const fluxo = {
+    start: {
+      pergunta: "👋 Vamos achar um jogo pra você.\nPor onde quer começar?",
+      opcoes: [
+        { label: "Já sei o gênero", next: "genero" },
+        { label: "Não sei, me guia", next: "humor" }
+      ]
+    },
 
-    if (dotsContainer && dotsContainer.children.length === 0) {
-      for (let i = 0; i < total; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-      }
-      dotsContainer.children[0]?.classList.add('active');
+    // 1) GÊNERO / ESTILO
+    genero: {
+      pergunta: "🎮 Escolha um gênero principal:",
+      opcoes: [
+        { label: "Ação", value: "ação", next: "plataforma" },
+        { label: "Tiro / Shooter", value: "shooter", next: "plataforma" },
+        { label: "RPG", value: "rpg", next: "plataforma" },
+        { label: "Aventura", value: "aventura", next: "plataforma" },
+        { label: "Estratégia", value: "estratégia", next: "plataforma" },
+        { label: "Arcade / Plataforma", value: "arcade", next: "plataforma" },
+        { label: "Terror", value: "terror", next: "plataforma" },
+        { label: "Indie", value: "indie", next: "plataforma" },
+        { label: "Outro (digitar)", next: "genero_digitado" }
+      ]
+    },
+
+    genero_digitado: {
+      pergunta: "Digite o gênero ou estilos que você curte (ex: 'soulslike, corrida, esportes'):",
+      input: "genero",
+      next: "plataforma"
+    },
+
+    // Caminho alternativo: HUMOR primeiro
+    humor: {
+      pergunta: "Que tipo de experiência você quer agora?",
+      opcoes: [
+        { label: "Relaxar / casual", value: "jogo leve e relaxante para familia", next: "plataforma" },
+        { label: "História forte", value: "história forte e narrativa emocionante", next: "plataforma" },
+        { label: "Competitivo", value: "competitivo e pvp online", next: "plataforma" },
+        { label: "Co-op com amigos", value: "multiplayer co-op com amigos", next: "plataforma" },
+        { label: "Assustador / terror", value: "terror assustador com zumbi", next: "plataforma" },
+        { label: "Quebrar a cabeça", value: "puzzle com quebra-cabeca e enigma", next: "plataforma" }
+      ]
+    },
+
+    // 2) PLATAFORMA
+    plataforma: {
+      pergunta: "📦 Em qual plataforma você quer jogar?",
+      opcoes: [
+        { label: "PC", value: "pc", next: "ano" },
+        { label: "PlayStation", value: "playstation", next: "ano" },
+        { label: "Xbox", value: "xbox", next: "ano" },
+        { label: "Nintendo", value: "nintendo", next: "ano" },
+        { label: "Mobile (Android / iOS)", value: "mobile", next: "ano" },
+        { label: "Qualquer uma", value: "qualquer", next: "ano" }
+      ]
+    },
+
+    // 3) ANO
+    ano: {
+      pergunta: "📅 E em relação ao ano de lançamento?",
+      opcoes: [
+        { label: "Mais recentes (últimos anos)", value: "recentes", next: "nota" },
+        { label: "Antes de 2015", value: "antes2015", next: "nota" },
+        { label: "Antes de 2010", value: "antes2010", next: "nota" },
+        { label: "Ano específico", next: "ano_digitado" },
+        { label: "Tanto faz", value: "qualquer", next: "nota" }
+      ]
+    },
+
+    ano_digitado: {
+      pergunta: "Digite o ano desejado (ex: 2018):",
+      input: "ano",
+      next: "nota"
+    },
+
+    // 4) NOTA
+    nota: {
+      pergunta: "⭐ Quer definir uma nota mínima?",
+      opcoes: [
+        { label: "4.0 ou mais", value: "4.0", next: "faixa" },
+        { label: "3.5 ou mais", value: "3.5", next: "faixa" },
+        { label: "3.0 ou mais", value: "3.0", next: "faixa" },
+        { label: "Não, tanto faz", value: "qualquer", next: "faixa" }
+      ]
+    },
+
+    // 5) FAIXA ETÁRIA
+    faixa: {
+      pergunta: "🔞 Tem alguma restrição de faixa etária?",
+      opcoes: [
+        { label: "Qualquer", value: "qualquer", next: "tags" },
+        { label: "Livre / família", value: "LIVRE", next: "tags" },
+        { label: "+10", value: "+10", next: "tags" },
+        { label: "+13", value: "+13", next: "tags" },
+        { label: "+17", value: "+17", next: "tags" }
+      ]
+    },
+
+    // 6) TAGS extras
+    tags: {
+      pergunta: "Quer adicionar alguma característica extra?",
+      opcoes: [
+        { label: "Não, pode seguir", value: "nenhuma", next: "confirmacao" },
+        { label: "Mundo aberto", value: "mundo aberto exploracao aventura", next: "confirmacao" },
+        { label: "Zumbis / Terror", value: "terror zumbi horror", next: "confirmacao" },
+        { label: "Co-op / Multiplayer", value: "multiplayer co-op cooperativo online", next: "confirmacao" },
+        { label: "Competitivo / PvP", value: "competitivo ranked pvp", next: "confirmacao" },
+        { label: "Fantasia / Medieval", value: "fantasia medieval magia dragao", next: "confirmacao" },
+        { label: "Puzzle / Quebra-cabeça", value: "puzzle quebra-cabeca enigma", next: "confirmacao" },
+        { label: "Família / Casual", value: "familia leve relaxante kids", next: "confirmacao" },
+        { label: "Indie / Alternativo", value: "indie pixel 2d metroidvania", next: "confirmacao" }
+      ]
+    },
+
+    // 7) CONFIRMAÇÃO FINAL
+    confirmacao: {
+      pergunta: () => `
+Confira o que você escolheu:<br><br>
+🎮 Estilo / gênero: <b>${filtros.genero || filtros.humor || "não definido"}</b><br>
+🖥 Plataforma: <b>${filtros.plataforma || "qualquer"}</b><br>
+📅 Ano: <b>${filtros.ano || "qualquer"}</b><br>
+⭐ Nota mínima: <b>${filtros.nota || "sem filtro"}</b><br>
+🔞 Faixa etária: <b>${filtros.faixa || "qualquer"}</b><br>
+🏷 Extras: <b>${filtros.tags || "nenhum"}</b><br><br>
+Posso buscar jogos com base nisso?
+      `,
+      opcoes: [
+        { label: "Sim, buscar jogos", next: "buscar" },
+        { label: "Quero refazer os filtros", next: "start" }
+      ]
+    },
+
+    buscar: {
+      acao: "buscar"
     }
+  };
 
-    function goToSlide(i) {
-      if (i < 0) i = total - 1;
-      else if (i >= total) i = 0;
-      const offset = -i * (100 / total);
-      slide.style.transform = `translateX(${offset}%)`;
-      currentIndex = i;
-      document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
-      document.querySelectorAll('.dot')[currentIndex]?.classList.add('active');
-    }
-
-    prevBtn?.addEventListener('click', () => goToSlide(currentIndex - 1));
-    nextBtn?.addEventListener('click', () => goToSlide(currentIndex + 1));
-    setInterval(() => goToSlide(currentIndex + 1), 10000);
-  }
-
-  const chatbotBtn = document.getElementById('chatbot-btn');
-  const chatbotBox = document.getElementById('chatbot-box');
-  const sendBtn = document.getElementById('send-btn');
-  const chatInput = document.getElementById('chat-input');
-  const chatBody = document.getElementById('chat-body');
-
-  chatbotBtn?.addEventListener('click', () => {
-    chatbotBox.classList.toggle('hidden');
-    const hidden = chatbotBox.classList.contains('hidden');
-    chatbotBox.setAttribute('aria-hidden', hidden ? 'true' : 'false');
-  });
-
-  sendBtn?.addEventListener('click', sendMessage);
-  chatInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
-
-  function appendMessage(text, who = 'bot') {
-    const p = document.createElement('p');
-    p.className = who === 'user' ? 'user' : 'bot';
-    p.textContent = text;
-    chatBody.appendChild(p);
+  // ================================
+  //  FUNÇÕES DE UI
+  // ================================
+  function addBotMessage(html) {
+    const el = document.createElement("p");
+    el.className = "bot";
+    el.innerHTML = html;
+    chatBody.appendChild(el);
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
-  async function sendMessage() {
-    const text = chatInput.value?.trim();
-    if (!text) return;
-    appendMessage('🧑 ' + text, 'user');
-    chatInput.value = '';
+  function addUserMessage(text) {
+    const el = document.createElement("p");
+    el.className = "user";
+    el.textContent = text;
+    chatBody.appendChild(el);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
 
-    appendMessage('🤖 pensando...', 'bot');
+  function mostrarEstado(id) {
+    estadoAtual = id;
+    const node = fluxo[id];
+
+    // Se é o estado de buscar, chama o backend
+    if (node && node.acao === "buscar") {
+      buscarJogos();
+      return;
+    }
+
+    if (!node) {
+      console.error("Estado inválido:", id);
+      return;
+    }
+
+    // registra no caminho (para voltar)
+    if (caminho[caminho.length - 1] !== id) {
+      caminho.push(id);
+    }
+
+    // limpa o chat e mostra só a etapa atual
+    chatBody.innerHTML = "";
+
+    const pergunta =
+      typeof node.pergunta === "function" ? node.pergunta() : node.pergunta;
+
+    addBotMessage(pergunta);
+
+    // opções como botões
+    if (node.opcoes) {
+      node.opcoes.forEach((op) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.textContent = "➡ " + op.label;
+
+        btn.addEventListener("click", () => {
+          if (op.value) salvarValor(id, op.value);
+          mostrarEstado(op.next);
+        });
+
+        chatBody.appendChild(btn);
+      });
+    }
+
+    // botão voltar (exceto na raiz)
+    if (id !== "start") {
+      const back = document.createElement("button");
+      back.className = "option-btn back";
+      back.textContent = "⬅ Voltar";
+      back.addEventListener("click", voltar);
+      chatBody.appendChild(back);
+    }
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function salvarValor(id, valor) {
+    if (id === "genero" || id === "genero_digitado") filtros.genero = valor;
+    if (id === "humor") filtros.humor = valor;
+    if (id === "plataforma") filtros.plataforma = valor;
+    if (id === "faixa") filtros.faixa = valor;
+    if (id === "nota") filtros.nota = valor;
+    if (id === "ano" || id === "ano_digitado") filtros.ano = valor;
+    if (id === "tags") filtros.tags = valor;
+  }
+
+  function voltar() {
+    caminho.pop();
+    const anterior = caminho.pop() || "start";
+    mostrarEstado(anterior);
+  }
+
+  sendBtn.addEventListener("click", processarTextoDigitado);
+  chatInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") processarTextoDigitado();
+  });
+
+  function processarTextoDigitado() {
+    const txt = chatInput.value.trim();
+    if (!txt) return;
+
+    const node = fluxo[estadoAtual];
+
+    // só aceita texto onde há input esperado (gênero/ano digitado)
+    if (!node || !node.input) return;
+
+    addUserMessage(txt);
+    filtros[node.input] = txt;
+    chatInput.value = "";
+
+    mostrarEstado(node.next);
+  }
+
+  function resetFiltros() {
+    filtros = {};
+    caminho = [];
+    estadoAtual = "start";
+
+    chatBody.innerHTML = "";
+    addBotMessage("🔄 Filtros reiniciados. Vamos começar de novo!");
+    mostrarEstado("start");
+  }
+
+  function adicionarBotaoReset() {
+    const resetBtn = document.createElement("button");
+    resetBtn.className = "option-btn reset";
+    resetBtn.textContent = "🔄 Reiniciar recomendação";
+    resetBtn.addEventListener("click", resetFiltros);
+
+    chatBody.appendChild(resetBtn);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  // ================================
+  //  BUSCA DE JOGOS NO BACKEND
+  // ================================
+  async function buscarJogos() {
+    // Bloco de TAGS estruturadas
+    const blocoTags = `
+[GENERO=${filtros.genero || "qualquer"}]
+[HUMOR=${filtros.humor || "qualquer"}]
+[PLATAFORMA=${filtros.plataforma || "qualquer"}]
+[FAIXA=${filtros.faixa || "qualquer"}]
+[NOTA=${filtros.nota || "qualquer"}]
+[ANO=${filtros.ano || "qualquer"}]
+[TAGS=${filtros.tags || "nenhuma"}]
+`.trim();
+
+    // Texto natural (só pra manter contexto, o backend lê mas não é obrigatório)
+    const fraseNatural = `
+Quero jogos do gênero ${filtros.genero || filtros.humor || "qualquer"} 
+para jogar em ${filtros.plataforma || "qualquer plataforma"}, 
+com nota mínima ${filtros.nota || "sem filtro"},
+faixa etária ${filtros.faixa || "qualquer"},
+ano ${filtros.ano || "qualquer"},
+com essas características extras: ${filtros.tags || "nenhuma"}.
+    `.trim();
+
+    const mensagem = blocoTags + "\n\n" + fraseNatural;
+
+    console.log("📨 Enviando para /chat:\n", mensagem);
+
+    addBotMessage("🔍 Buscando jogos compatíveis com as suas escolhas...");
 
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text })
+      const resp = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mensagem })
       });
 
-      if (!res.ok) throw new Error('Servidor indisponível');
+      if (!resp.ok) {
+        chatBody.innerHTML = "";
+        addBotMessage("❌ Erro ao buscar jogos no servidor.");
+        adicionarBotaoReset();
+        return;
+      }
 
-      const data = await res.json();
-      const lastBot = Array.from(chatBody.querySelectorAll('p.bot')).reverse().find(el => el.textContent.includes('pensando'));
-      if (lastBot) lastBot.remove();
+      const data = await resp.json();
+      let jogos = data.resposta || [];
+      let intro = "";
 
-      appendMessage('🤖 ' + (data.reply || data.message || 'Sem resposta.'), 'bot');
+      if (jogos[0]?.intro) {
+        intro = jogos[0].intro;
+        jogos = jogos.slice(1);
+      }
 
+      // Nenhum jogo encontrado
+      if (!Array.isArray(jogos) || jogos.length === 0) {
+        chatBody.innerHTML = "";
+        addBotMessage(
+          (intro || "⚠ Não encontramos jogos com esses filtros.") +
+          "<br><br>Tente mudar gênero, plataforma ou ano para ampliar a busca."
+        );
+        adicionarBotaoReset();
+        return;
+      }
+
+      let html = `
+        <div style="margin-bottom: 12px; white-space: pre-line;">
+          ${intro || "🎮 Aqui estão algumas recomendações para você:"}
+        </div>
+        <ul style="list-style:none; padding:0; margin:0;">
+      `;
+
+      jogos.forEach((j) => {
+        html += `
+          <li style="margin-bottom:14px; border-bottom:1px solid #1b2838; padding-bottom:10px;">
+            <div style="font-weight:bold; font-size:14px;">
+              ${j.nome} <span style="color:#66c0f4;">(${j.genero || "Gênero não informado"})</span>
+            </div>
+
+            <small>
+              <b>Ano:</b> ${j.ano || "—"} • 
+              <b>Plataforma:</b> ${j.plataforma || "—"}
+            </small><br>
+            <small><b>Publisher:</b> ${j.publisher || "—"}</small><br>
+            <small><b>Nota:</b> ⭐ ${j.nota?.toFixed ? j.nota.toFixed(1) : j.nota}</small><br>
+            <small><b>Faixa etária:</b> ${j.faixa_etaria || "N/A"}</small><br>
+            <small style="color:#bbb; display:block; margin-top:4px;">
+              <b>Descrição:</b> ${j.descricao || "Sem descrição disponível."}
+            </small>
+          </li>
+        `;
+      });
+
+      html += `</ul>`;
+
+      chatBody.innerHTML = "";
+      addBotMessage(html);
+      adicionarBotaoReset();
     } catch (err) {
-      const lastBot = Array.from(chatBody.querySelectorAll('p.bot')).reverse().find(el => el.textContent.includes('pensando'));
-      if (lastBot) lastBot.remove();
-      appendMessage('🤖 (demo offline) Ainda não consigo conectar ao servidor. Vou responder localmente: Em breve o chat estará disponível.', 'bot');
-      console.error(err);
+      console.error("Erro ao chamar /chat:", err);
+      chatBody.innerHTML = "";
+      addBotMessage("❌ Ocorreu um erro ao conectar ao servidor.");
+      adicionarBotaoReset();
     }
   }
 
+  // Inicia a árvore
+  mostrarEstado("start");
 });
-
