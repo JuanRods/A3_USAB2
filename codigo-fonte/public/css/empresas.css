@@ -1,0 +1,262 @@
+body {
+  margin: 0;
+  font-family: "Inter", "Poppins", sans-serif;
+  background: #f6f8fa;
+  color: #111827;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-toggle-form {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #22c55e;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn-toggle-form i {
+  pointer-events: none;
+}
+
+.btn-toggle-form:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.45);
+}
+
+.btn-toggle-form.aberto {
+  background: #4b5563;
+  box-shadow: 0 2px 8px rgba(75, 85, 99, 0.4);
+}
+
+.btn-toggle-form.aberto:hover {
+  background: #374151;
+}
+
+.form-section {
+  margin-top: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  animation: fadeDown 0.18s ease-out;
+}
+
+.form-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.empresa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.form-section input,
+.form-section select,
+.form-section textarea {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-section input:focus,
+.form-section select:focus,
+.form-section textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
+}
+
+.btn-salvar {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  margin-top: 8px;
+}
+
+.btn-salvar:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.btn-cancelar {
+  background: #e5e7eb;
+  color: #111827;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  margin-top: 8px;
+}
+
+.btn-cancelar:hover {
+  background: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(148, 163, 184, 0.35);
+}
+
+.table-section {
+  margin-top: 32px;
+}
+
+.table-section h2 {
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.empresa-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.empresa-table thead {
+  background: #f1f5f9;
+}
+
+.empresa-table th {
+  text-align: left;
+  padding: 12px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.empresa-table td {
+  padding: 12px 18px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.empresa-table tr:hover {
+  background: #f9fafb;
+  transition: background 0.2s ease;
+}
+
+.btn-editar,
+.btn-excluir {
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-right: 6px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn-editar {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.btn-editar:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+}
+
+.btn-excluir {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.btn-excluir:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.35);
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .empresa-table th,
+  .empresa-table td {
+    padding: 9px 10px;
+    font-size: 0.8rem;
+  }
+
+  .btn-editar,
+  .btn-excluir {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
